@@ -203,15 +203,36 @@ namespace Final_Project
         }
         private void CalendarFunc()
         {
-
+            
         }
         private void MoneyBookFunc()
         {
-
+            
         }
         private void MyDairyFunc()
         {
+            
+        }
 
+        private void calenderBtn_Click(object sender, EventArgs e)
+        {
+            mode = 0;
+            calenderBtn.BackColor = Color.LightSteelBlue;
+            moneybookBtn.BackColor = mydiaryBtn.BackColor = Color.White;
+        }
+
+        private void moneybookBtn_Click(object sender, EventArgs e)
+        {
+            mode = 1;
+            moneybookBtn.BackColor = Color.LightSteelBlue;
+            calenderBtn.BackColor = mydiaryBtn.BackColor = Color.White;
+        }
+
+        private void mydiaryBtn_Click(object sender, EventArgs e)
+        {
+            mode = 2;
+            mydiaryBtn.BackColor = Color.LightSteelBlue;
+            moneybookBtn.BackColor = calenderBtn.BackColor = Color.White;
         }
     }
 }
