@@ -31,7 +31,7 @@
             this.components = new System.ComponentModel.Container();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.progressBar_panel = new System.Windows.Forms.Panel();
-            this.loading_label = new System.Windows.Forms.Label();
+            this.title_label = new System.Windows.Forms.Label();
             this.percentage_label = new System.Windows.Forms.Label();
             this.Bar_panel = new System.Windows.Forms.Panel();
             this.Bar4 = new System.Windows.Forms.Label();
@@ -47,6 +47,7 @@
             this.RightToolStripPanel = new System.Windows.Forms.ToolStripPanel();
             this.LeftToolStripPanel = new System.Windows.Forms.ToolStripPanel();
             this.ContentPanel = new System.Windows.Forms.ToolStripContentPanel();
+            this.loading_Label = new System.Windows.Forms.Label();
             this.progressBar_panel.SuspendLayout();
             this.Bar_panel.SuspendLayout();
             this.menu_panel.SuspendLayout();
@@ -60,7 +61,8 @@
             // progressBar_panel
             // 
             this.progressBar_panel.BackgroundImage = global::Final_Project.Properties.Resources.Loading_Page;
-            this.progressBar_panel.Controls.Add(this.loading_label);
+            this.progressBar_panel.Controls.Add(this.loading_Label);
+            this.progressBar_panel.Controls.Add(this.title_label);
             this.progressBar_panel.Controls.Add(this.percentage_label);
             this.progressBar_panel.Controls.Add(this.Bar_panel);
             this.progressBar_panel.Location = new System.Drawing.Point(0, -6);
@@ -68,25 +70,27 @@
             this.progressBar_panel.Size = new System.Drawing.Size(1034, 495);
             this.progressBar_panel.TabIndex = 0;
             // 
-            // loading_label
+            // title_label
             // 
-            this.loading_label.AutoSize = true;
-            this.loading_label.Font = new System.Drawing.Font("Matura MT Script Capitals", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.loading_label.ForeColor = System.Drawing.Color.DarkSlateBlue;
-            this.loading_label.Location = new System.Drawing.Point(419, 160);
-            this.loading_label.Name = "loading_label";
-            this.loading_label.Size = new System.Drawing.Size(263, 64);
-            this.loading_label.TabIndex = 3;
-            this.loading_label.Text = "Loading...";
+            this.title_label.AutoSize = true;
+            this.title_label.BackColor = System.Drawing.Color.Transparent;
+            this.title_label.Font = new System.Drawing.Font("Forte", 39.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.title_label.ForeColor = System.Drawing.Color.DarkSlateBlue;
+            this.title_label.Location = new System.Drawing.Point(241, 140);
+            this.title_label.Name = "title_label";
+            this.title_label.Size = new System.Drawing.Size(606, 58);
+            this.title_label.TabIndex = 3;
+            this.title_label.Text = "Little Helper Three To One";
             // 
             // percentage_label
             // 
             this.percentage_label.AutoSize = true;
-            this.percentage_label.Font = new System.Drawing.Font("Matura MT Script Capitals", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.percentage_label.BackColor = System.Drawing.Color.Transparent;
+            this.percentage_label.Font = new System.Drawing.Font("Forte", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.percentage_label.ForeColor = System.Drawing.Color.DarkSlateBlue;
             this.percentage_label.Location = new System.Drawing.Point(802, 232);
             this.percentage_label.Name = "percentage_label";
-            this.percentage_label.Size = new System.Drawing.Size(102, 64);
+            this.percentage_label.Size = new System.Drawing.Size(91, 52);
             this.percentage_label.TabIndex = 2;
             this.percentage_label.Text = "0%";
             // 
@@ -224,6 +228,18 @@
             // 
             this.ContentPanel.Size = new System.Drawing.Size(150, 150);
             // 
+            // loading_Label
+            // 
+            this.loading_Label.AutoSize = true;
+            this.loading_Label.BackColor = System.Drawing.Color.Transparent;
+            this.loading_Label.Font = new System.Drawing.Font("Forte", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.loading_Label.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.loading_Label.Location = new System.Drawing.Point(470, 207);
+            this.loading_Label.Name = "loading_Label";
+            this.loading_Label.Size = new System.Drawing.Size(131, 32);
+            this.loading_Label.TabIndex = 4;
+            this.loading_Label.Text = "Loading...";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -233,7 +249,7 @@
             this.Controls.Add(this.progressBar_panel);
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Form1";
+            this.Text = "Little Helper Three To One";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.Resize += new System.EventHandler(this.Form1_Resize);
             this.progressBar_panel.ResumeLayout(false);
@@ -254,7 +270,7 @@
         private System.Windows.Forms.Label Bar3;
         private System.Windows.Forms.Label Bar2;
         private System.Windows.Forms.Label percentage_label;
-        private System.Windows.Forms.Label loading_label;
+        private System.Windows.Forms.Label title_label;
         private System.Windows.Forms.Panel menu_panel;
         private System.Windows.Forms.Button moneybookBtn;
         private System.Windows.Forms.Button mydiaryBtn;
@@ -264,6 +280,7 @@
         private System.Windows.Forms.ToolStripPanel RightToolStripPanel;
         private System.Windows.Forms.ToolStripPanel LeftToolStripPanel;
         private System.Windows.Forms.ToolStripContentPanel ContentPanel;
+        private System.Windows.Forms.Label loading_Label;
     }
 }
 

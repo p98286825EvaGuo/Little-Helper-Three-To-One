@@ -41,10 +41,9 @@ namespace Final_Project
             progressBar_panel.Visible = true;
             progressBar_panel.BackgroundImageLayout = ImageLayout.Stretch;
             timer1.Enabled = true;
-            percentage_label.BackColor = loading_label.BackColor = Color.Transparent;
             menu_panel.Visible = false;
             FormBorderStyle = FormBorderStyle.None;
-            percentage_label.ForeColor = Color.FromArgb(255, 145, 159, 198);            
+            //percentage_label.ForeColor = Color.FromArgb(255, 145, 159, 198);            
         }
         private void CreateWeekLabel()//創建星期的label
         {
@@ -207,7 +206,8 @@ namespace Final_Project
         }
         private void MoneyBookFunc()
         {
-            
+            Form moneyBook_form = new moneyBook();
+            moneyBook_form.ShowDialog();
         }
         private void MyDairyFunc()
         {

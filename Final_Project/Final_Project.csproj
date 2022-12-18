@@ -63,6 +63,9 @@
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="moneyBook.resx">
+      <DependentUpon>moneyBook.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -88,6 +91,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Loading Page.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pig.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
