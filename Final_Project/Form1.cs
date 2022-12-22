@@ -202,7 +202,8 @@ namespace Final_Project
         }
         private void CalendarFunc()
         {
-            
+            Calendar calendar = new Calendar();
+            calendar.ShowDialog();
         }
         private void MoneyBookFunc()
         {
