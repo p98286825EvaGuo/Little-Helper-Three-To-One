@@ -31,6 +31,11 @@ namespace Final_Project
         string textFont = "Arial";
         int leftMargin = 20;//日曆左邊的間隔
         int mode = 0;
+
+        //data
+        Dictionary<string, List<Dictionary<string, string>> > calendarData = new Dictionary<string, List<Dictionary<string, string>>>();
+
+
         public Form1()
         {
             InitializeComponent();
