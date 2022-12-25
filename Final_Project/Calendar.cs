@@ -26,15 +26,22 @@ namespace Final_Project
         {
             InitializeComponent();
             data = originData;
-            saved = true;
+            SetSaved(true);
         }
         public Calendar()
         {
             InitializeComponent();
-            Name = "*Calender";
+            SetSaved(false);
         }
         public List<Dictionary<string, string>> GetData() {
             return data;
+        }
+        private void SetSaved(bool s) {
+            saved = s;
+            if (saved)
+                Text = "Calender";
+            else
+                Text = "*Calender";
         }
         private void Calendar_Shown(object sender, EventArgs e)
         {
@@ -48,15 +55,26 @@ namespace Final_Project
         }
         private void Calendar_FormClosing(object sender, FormClosingEventArgs e)
         {
-            data.Clear();
-            for (int i = 0; i < add_things.Lines.Length; i++) {
-                add_things.SelectionStart = add_things.GetFirstCharIndexFromLine(i);
-                Dictionary<string, string> dataLine = new Dictionary<string, string>();
-                dataLine["thing"] = add_things.Lines[i];
-                /* if fontstyle is bold, then the thing's property is set important */
-                dataLine["important"] = (add_things.SelectionFont.Style == FontStyle.Bold).ToString();
-                data.Add(dataLine);
+            DialogResult result;
+            if (!saved) {
+                result = MessageBox.Show("請問是否要儲存變更?", "尚未儲存", MessageBoxButtons.YesNoCancel);
+                if (result == DialogResult.Yes)
+                    SetSaved(true);
+                else if (result == DialogResult.Cancel)
+                    e.Cancel = true;
             }
+            if (saved) {
+                data.Clear();
+                for (int i = 0; i < add_things.Lines.Length; i++)
+                {
+                    add_things.SelectionStart = add_things.GetFirstCharIndexFromLine(i);
+                    Dictionary<string, string> dataLine = new Dictionary<string, string>();
+                    dataLine["thing"] = add_things.Lines[i];
+                    /* if fontstyle is bold, then the thing's property is set important */
+                    dataLine["important"] = (add_things.SelectionFont.Style == FontStyle.Bold).ToString();
+                    data.Add(dataLine);
+                }
+            }                
         }
 
         private void backBtn_Click(object sender, EventArgs e)
@@ -94,6 +112,7 @@ namespace Final_Project
         private void add_things_TextChanged(object sender, EventArgs e)
         {
             GetLineIndex();
+            SetSaved(false);
         }
         private void add_things_KeyPress(object sender, KeyPressEventArgs e)
         {
@@ -102,8 +121,7 @@ namespace Final_Project
 
         private void save_Click(object sender, EventArgs e)
         {
-            Name = "Calender";
-            saved = true;
+            SetSaved(true);
         }
 
         private void delete_Click(object sender, EventArgs e)
@@ -113,6 +131,7 @@ namespace Final_Project
 
         private void important_Click(object sender, EventArgs e)
         {
+            //change font will arise textchanged event
             if (add_things.SelectionFont.Style == FontStyle.Bold) {
                 ChangeLineFont(FontStyle.Regular);
                 important.Text = "imp";
