@@ -35,6 +35,7 @@
             this.AddBtn = new System.Windows.Forms.Button();
             this.work_panel = new System.Windows.Forms.Panel();
             this.add_things = new System.Windows.Forms.RichTextBox();
+            this.work_back = new System.Windows.Forms.Button();
             this.important = new System.Windows.Forms.Button();
             this.delete = new System.Windows.Forms.Button();
             this.save = new System.Windows.Forms.Button();
@@ -107,6 +108,7 @@
             // 
             this.work_panel.BackColor = System.Drawing.Color.PowderBlue;
             this.work_panel.Controls.Add(this.add_things);
+            this.work_panel.Controls.Add(this.work_back);
             this.work_panel.Controls.Add(this.important);
             this.work_panel.Controls.Add(this.delete);
             this.work_panel.Controls.Add(this.save);
@@ -120,15 +122,27 @@
             // 
             this.add_things.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.add_things.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.add_things.Location = new System.Drawing.Point(13, 19);
+            this.add_things.Location = new System.Drawing.Point(13, 16);
             this.add_things.Name = "add_things";
-            this.add_things.Size = new System.Drawing.Size(863, 534);
-            this.add_things.TabIndex = 4;
-            this.add_things.Text = "12\n1\n11\n1\n1\n1\n";
-            this.add_things.WordWrap = false;
+            this.add_things.Size = new System.Drawing.Size(869, 537);
+            this.add_things.TabIndex = 6;
+            this.add_things.Text = "asd\nasd\n44\n4\ns";
             this.add_things.MouseClick += new System.Windows.Forms.MouseEventHandler(this.add_things_MouseClick);
             this.add_things.TextChanged += new System.EventHandler(this.add_things_TextChanged);
             this.add_things.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.add_things_KeyPress);
+            this.add_things.KeyUp += new System.Windows.Forms.KeyEventHandler(this.add_things_KeyUp);
+            // 
+            // work_back
+            // 
+            this.work_back.Font = new System.Drawing.Font("Showcard Gothic", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.work_back.Location = new System.Drawing.Point(889, 482);
+            this.work_back.Margin = new System.Windows.Forms.Padding(4);
+            this.work_back.Name = "work_back";
+            this.work_back.Size = new System.Drawing.Size(166, 71);
+            this.work_back.TabIndex = 5;
+            this.work_back.Text = "back";
+            this.work_back.UseVisualStyleBackColor = true;
+            this.work_back.Click += new System.EventHandler(this.backBtn_Click);
             // 
             // important
             // 
@@ -196,6 +210,7 @@
         private System.Windows.Forms.Button important;
         private System.Windows.Forms.Button delete;
         private System.Windows.Forms.Button save;
+        private System.Windows.Forms.Button work_back;
         private System.Windows.Forms.RichTextBox add_things;
     }
 }

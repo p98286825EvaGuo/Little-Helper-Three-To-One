@@ -26,13 +26,15 @@ namespace Final_Project
         public Calendar(List<Dictionary<string, string>> originData)
         {
             InitializeComponent();
+            add_things.LanguageOption = RichTextBoxLanguageOptions.DualFont;
             data = originData;
-            SetSaved(true);
+            first = true;
         }
         public Calendar()
         {
             InitializeComponent();
-            SetSaved(false);
+            add_things.LanguageOption = RichTextBoxLanguageOptions.DualFont;
+            first = false;
         }
         public List<Dictionary<string, string>> GetData() {
             return data;
@@ -50,8 +52,16 @@ namespace Final_Project
             for (int i = 0; i < data.Count; i++)
                 temp.Add(data[i]["thing"]);
             add_things.Lines = temp.ToArray();
+            lineIndex = 0;
+            for (int i = 0; i < data.Count; i++) {
+                if (bool.Parse(data[i]["important"]))
+                    ChangeLineFont(FontStyle.Bold);
+                lineIndex++;
+            }
             lineIndex = temp.Count - 1;
             add_things.SelectionStart = add_things.Text.Length;
+            if (first)
+                SetSaved(true);
             add_things.Focus();
         }
         private void Calendar_FormClosing(object sender, FormClosingEventArgs e)
@@ -72,7 +82,13 @@ namespace Final_Project
                     Dictionary<string, string> dataLine = new Dictionary<string, string>();
                     dataLine["thing"] = add_things.Lines[i];
                     /* if fontstyle is bold, then the thing's property is set important */
-                    dataLine["important"] = (add_things.SelectionFont.Style == FontStyle.Bold).ToString();
+                    try
+                    {
+                        dataLine["important"] = (add_things.SelectionFont.Style == FontStyle.Bold).ToString();
+                    }
+                    catch {
+                        dataLine["important"] = "false";
+                    }
                     data.Add(dataLine);
                 }
             }
@@ -103,7 +119,6 @@ namespace Final_Project
                 important.Text = "unimp";
             else
                 important.Text = "imp";
-            //add_things.SelectionFont = new Font("微軟正黑體", 12);
         }
         private void add_things_MouseClick(object sender, MouseEventArgs e)
         {
@@ -111,14 +126,14 @@ namespace Final_Project
         }
         private void add_things_TextChanged(object sender, EventArgs e)
         {
-            if (first)
-                first = false;
-            else {
-                GetLineIndex();
-                SetSaved(false);
-            }            
+            GetLineIndex();
+            SetSaved(false);            
         }
         private void add_things_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            GetLineIndex();
+        }
+        private void add_things_KeyUp(object sender, KeyEventArgs e)
         {
             GetLineIndex();
         }
@@ -147,6 +162,8 @@ namespace Final_Project
                 ChangeLineFont(FontStyle.Bold);
                 important.Text = "unimp";
             }                
-        }        
+        }
+
+        
     }
 }
