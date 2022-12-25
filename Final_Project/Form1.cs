@@ -209,7 +209,11 @@ namespace Final_Project
         }
         private void CalendarFunc(string date)
         {
-            Calendar calendar = new Calendar();
+            Calendar calendar;
+            if(calendarData.ContainsKey(date))
+                calendar = new Calendar(calendarData[date]);
+            else
+                calendar = new Calendar();
             calendar.ShowDialog();
             calendarData[date] = calendar.GetData();
         }

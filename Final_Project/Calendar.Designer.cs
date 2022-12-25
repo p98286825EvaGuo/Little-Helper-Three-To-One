@@ -174,6 +174,7 @@
             this.Controls.Add(this.work_panel);
             this.Controls.Add(this.menu_panel);
             this.Name = "Calendar";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Calendar";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Calendar_FormClosing);
             this.Shown += new System.EventHandler(this.Calendar_Shown);
