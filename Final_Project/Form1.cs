@@ -95,6 +95,7 @@ namespace Final_Project
             {
                 calendar[i] = new Button//Button的properties
                 {
+                    Name = startDate.Date.ToShortDateString(),
                     Size = new Size(buttonSize, buttonSize),
                     Location = new Point(leftMargin + (i % 7) * buttonSize, week[0].Height + (i / 7) * buttonSize),
                     Text = $"{startDate.Day}",
@@ -106,7 +107,7 @@ namespace Final_Project
                         BorderColor = Color.LightGray,
                         BorderSize = 1,
                         MouseDownBackColor = Color.FromArgb(128, 255, 255),
-                        MouseOverBackColor =Color.FromArgb(192, 255, 255)
+                        MouseOverBackColor = Color.FromArgb(192, 255, 255)
                     }//button的appearance
                 };
                 if (i == 0 || startDate.Day == 1)//判斷該月份顯示的第一天
@@ -192,9 +193,10 @@ namespace Final_Project
         }
         private void DateButton_Click(object sender, EventArgs e)
         {
+            Button dateButton = (Button)sender;
             if (mode == 0)//行事曆
             {
-                CalendarFunc();
+                CalendarFunc(dateButton.Name);
             }
             else if (mode == 1)//記帳
             {
@@ -205,10 +207,11 @@ namespace Final_Project
                 MyDairyFunc();
             }
         }
-        private void CalendarFunc()
+        private void CalendarFunc(string date)
         {
             Calendar calendar = new Calendar();
             calendar.ShowDialog();
+            calendarData[date] = calendar.GetData();
         }
         private void MoneyBookFunc()
         {

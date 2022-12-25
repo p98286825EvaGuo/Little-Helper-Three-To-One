@@ -133,10 +133,10 @@
             // important
             // 
             this.important.Font = new System.Drawing.Font("Showcard Gothic", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.important.Location = new System.Drawing.Point(899, 177);
+            this.important.Location = new System.Drawing.Point(889, 174);
             this.important.Margin = new System.Windows.Forms.Padding(4);
             this.important.Name = "important";
-            this.important.Size = new System.Drawing.Size(156, 71);
+            this.important.Size = new System.Drawing.Size(166, 71);
             this.important.TabIndex = 3;
             this.important.Text = "imp";
             this.important.UseVisualStyleBackColor = true;
@@ -145,10 +145,10 @@
             // delete
             // 
             this.delete.Font = new System.Drawing.Font("Showcard Gothic", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.delete.Location = new System.Drawing.Point(899, 98);
+            this.delete.Location = new System.Drawing.Point(889, 95);
             this.delete.Margin = new System.Windows.Forms.Padding(4);
             this.delete.Name = "delete";
-            this.delete.Size = new System.Drawing.Size(156, 71);
+            this.delete.Size = new System.Drawing.Size(166, 71);
             this.delete.TabIndex = 1;
             this.delete.Text = "Delete";
             this.delete.UseVisualStyleBackColor = true;
@@ -157,10 +157,10 @@
             // save
             // 
             this.save.Font = new System.Drawing.Font("Showcard Gothic", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.save.Location = new System.Drawing.Point(899, 19);
+            this.save.Location = new System.Drawing.Point(889, 16);
             this.save.Margin = new System.Windows.Forms.Padding(4);
             this.save.Name = "save";
-            this.save.Size = new System.Drawing.Size(156, 71);
+            this.save.Size = new System.Drawing.Size(166, 71);
             this.save.TabIndex = 0;
             this.save.Text = "save";
             this.save.UseVisualStyleBackColor = true;
@@ -175,6 +175,7 @@
             this.Controls.Add(this.menu_panel);
             this.Name = "Calendar";
             this.Text = "Calendar";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Calendar_FormClosing);
             this.Shown += new System.EventHandler(this.Calendar_Shown);
             this.menu_panel.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
