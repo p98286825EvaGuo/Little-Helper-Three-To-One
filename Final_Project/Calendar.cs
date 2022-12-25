@@ -16,6 +16,7 @@ namespace Final_Project
         int lineIndex = 0;//游標位置
         string textFont = "微軟正黑體";
         bool saved = false;
+        bool first = true;
         List<Dictionary<string, string>> data = new List<Dictionary<string, string>>();
         /*  data = [{
                     "thing" : <string>,
@@ -61,7 +62,7 @@ namespace Final_Project
                 if (result == DialogResult.Yes)
                     SetSaved(true);
                 else if (result == DialogResult.Cancel)
-                    e.Cancel = true;
+                    e.Cancel = true;//取消關閉視窗
             }
             if (saved) {
                 data.Clear();
@@ -74,9 +75,8 @@ namespace Final_Project
                     dataLine["important"] = (add_things.SelectionFont.Style == FontStyle.Bold).ToString();
                     data.Add(dataLine);
                 }
-            }                
+            }
         }
-
         private void backBtn_Click(object sender, EventArgs e)
         {
             Close();
@@ -111,8 +111,12 @@ namespace Final_Project
         }
         private void add_things_TextChanged(object sender, EventArgs e)
         {
-            GetLineIndex();
-            SetSaved(false);
+            if (first)
+                first = false;
+            else {
+                GetLineIndex();
+                SetSaved(false);
+            }            
         }
         private void add_things_KeyPress(object sender, KeyPressEventArgs e)
         {
@@ -126,7 +130,9 @@ namespace Final_Project
 
         private void delete_Click(object sender, EventArgs e)
         {
-
+            add_things.SelectionStart = add_things.GetFirstCharIndexFromLine(lineIndex);
+            add_things.SelectionLength = add_things.Lines[lineIndex].Length + 1;
+            add_things.SelectedText = string.Empty;
         }
 
         private void important_Click(object sender, EventArgs e)
