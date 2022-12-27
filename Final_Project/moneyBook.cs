@@ -42,14 +42,13 @@ namespace Final_Project
                 iconBtns[i].ImageList = button_icons;
                 iconBtns[i].ImageIndex = i;
                 addPanel.Controls.Add(iconBtns[i]);
-                //iconBtns[i].MouseLeave += iconBtn_mouseLeave;
-                //iconBtns[i].MouseHover += iconBtn_mouseHover;
 
                 //button 外觀
                 iconBtns[i].FlatStyle = FlatStyle.Flat;
                 iconBtns[i].FlatAppearance.BorderSize = 2;
                 iconBtns[i].FlatAppearance.BorderColor = Color.White;
                 iconBtns[i].FlatAppearance.MouseOverBackColor = Color.BurlyWood;
+                iconBtns[i].FlatAppearance.MouseDownBackColor = Color.SandyBrown;
                 iconBtns[i].ForeColor = Color.DarkBlue;
                 iconBtns[i].ImageAlign = ContentAlignment.TopCenter;
                 iconBtns[i].TextAlign = ContentAlignment.BottomCenter;
@@ -72,7 +71,7 @@ namespace Final_Project
                     case 13: iconBtns[i].Text = "Travel"; break;
                     case 14: iconBtns[i].Text = "Others"; break;
                 }
-                //cardBtns[i].Click += ButtonArray_Click;  //匿名函數 匿名函數中含有別的具名函數
+                iconBtns[i].Click += iconBtn_Click;
             }
         }
 
@@ -84,26 +83,29 @@ namespace Final_Project
         private void moneyBook_Load(object sender, EventArgs e)
         {
             iconBtns = new Button[15];
-            addPanel.Visible = false;
+            addPanel.Visible = inputMoneyPanel.Visible = false;
             HomePanel.Visible = true;
-        }
-
-        private void iconBtn_mouseHover(object sender, EventArgs e)
-        {
-            Button button = (Button)sender;
-            button.BackColor = Color.BurlyWood;
-        }
-
-        private void iconBtn_mouseLeave(object sender, EventArgs e)
-        {
-            Button button = (Button)sender;
-            button.BackColor = Color.AntiqueWhite;
         }
 
         private void addBackBtn_Click(object sender, EventArgs e)
         {
             addPanel.Visible = false;
             HomePanel.Visible = true;
+        }
+
+        private void iconBtn_Click(object sender, EventArgs e)
+        {
+            Button icon_button = (Button)sender;
+            addPanel.Visible = false;
+            inputMoneyPanel.Visible = true;
+        }
+
+        private void backIconBtn_Click(object sender, EventArgs e)
+        {
+            inputMoneyPanel.Visible = false;
+            moneyAmounttextBox.Clear();
+            NotetextBox.Clear();
+            addPanel.Visible = true;
         }
     }
 }
