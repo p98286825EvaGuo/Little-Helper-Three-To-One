@@ -58,7 +58,10 @@ namespace Final_Project
                     ChangeLineFont(FontStyle.Bold);
                 lineIndex++;
             }
-            lineIndex = temp.Count - 1;
+            if (temp.Count > 0)
+                lineIndex = temp.Count - 1;
+            else
+                lineIndex = 0;
             add_things.SelectionStart = add_things.Text.Length;
             if (first)
                 SetSaved(true);
@@ -110,7 +113,10 @@ namespace Final_Project
         private void ChangeLineFont(FontStyle style)
         {
             add_things.SelectionStart = add_things.GetFirstCharIndexFromLine(lineIndex);
-            add_things.SelectionLength = add_things.Lines[lineIndex].Length;
+            if (add_things.Lines.Length == 0)
+                add_things.SelectionLength = 0;
+            else
+                add_things.SelectionLength = add_things.Lines[lineIndex].Length;
             add_things.SelectionFont = new Font(textFont, 12, style);
         }
         private void GetLineIndex() {
@@ -145,6 +151,8 @@ namespace Final_Project
 
         private void delete_Click(object sender, EventArgs e)
         {
+            if (add_things.Lines.Length == 0)
+                return;
             add_things.SelectionStart = add_things.GetFirstCharIndexFromLine(lineIndex);
             add_things.SelectionLength = add_things.Lines[lineIndex].Length + 1;
             add_things.SelectedText = string.Empty;
