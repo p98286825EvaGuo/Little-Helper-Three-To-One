@@ -224,7 +224,8 @@ namespace Final_Project
         }
         private void MyDairyFunc()
         {
-            
+            Form diary_form = new diary();
+            diary_form.ShowDialog();
         }
 
         private void calenderBtn_Click(object sender, EventArgs e)
@@ -246,6 +247,11 @@ namespace Final_Project
             mode = 2;
             mydiaryBtn.BackColor = Color.LightSteelBlue;
             moneybookBtn.BackColor = calenderBtn.BackColor = Color.White;
+        }
+
+        private void menu_panel_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }
