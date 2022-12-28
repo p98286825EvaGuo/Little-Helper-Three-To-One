@@ -98,6 +98,7 @@ namespace Final_Project
             Button icon_button = (Button)sender;
             addPanel.Visible = false;
             inputMoneyPanel.Visible = true;
+            label3.Text = icon_button.Text;
         }
 
         private void backIconBtn_Click(object sender, EventArgs e)

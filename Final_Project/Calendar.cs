@@ -54,7 +54,7 @@ namespace Final_Project
             add_things.Lines = temp.ToArray();
             lineIndex = 0;
             for (int i = 0; i < data.Count; i++) {
-                if (bool.Parse(data[i]["important"]))
+                if (bool.Parse(data[i]["Important"]))
                     ChangeLineFont(FontStyle.Bold);
                 lineIndex++;
             }
@@ -87,10 +87,10 @@ namespace Final_Project
                     /* if fontstyle is bold, then the thing's property is set important */
                     try
                     {
-                        dataLine["important"] = (add_things.SelectionFont.Style == FontStyle.Bold).ToString();
+                        dataLine["Important"] = (add_things.SelectionFont.Style == FontStyle.Bold).ToString();
                     }
                     catch {
-                        dataLine["important"] = "false";
+                        dataLine["Important"] = "false";
                     }
                     data.Add(dataLine);
                 }
@@ -117,14 +117,14 @@ namespace Final_Project
                 add_things.SelectionLength = 0;
             else
                 add_things.SelectionLength = add_things.Lines[lineIndex].Length;
-            add_things.SelectionFont = new Font(textFont, 12, style);
+            add_things.SelectionFont = new Font(textFont, 16, style);
         }
         private void GetLineIndex() {
             lineIndex = add_things.GetLineFromCharIndex(add_things.SelectionStart);//游標所在的行數
             if (add_things.SelectionFont.Style == FontStyle.Bold)
-                important.Text = "unimp";
+                important.Text = "Unimportant";
             else
-                important.Text = "imp";
+                important.Text = "Important";
         }
         private void add_things_MouseClick(object sender, MouseEventArgs e)
         {
@@ -163,12 +163,12 @@ namespace Final_Project
             //change font will arise textchanged event
             if (add_things.SelectionFont.Style == FontStyle.Bold) {
                 ChangeLineFont(FontStyle.Regular);
-                important.Text = "imp";
+                important.Text = "Important";
             }
             else
             {
                 ChangeLineFont(FontStyle.Bold);
-                important.Text = "unimp";
+                important.Text = "Unimportant";
             }                
         }
 

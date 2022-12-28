@@ -48,6 +48,7 @@ namespace Final_Project
             timer1.Enabled = true;
             menu_panel.Visible = false;
             FormBorderStyle = FormBorderStyle.None;
+            menu_panel.BackColor = Color.FromArgb(235, 235, 235);
             //percentage_label.ForeColor = Color.FromArgb(255, 145, 159, 198);            
         }
         private void CreateWeekLabel()//創建星期的label
@@ -104,10 +105,10 @@ namespace Final_Project
                     BackColor = Color.White,
                     FlatStyle = FlatStyle.Flat,
                     FlatAppearance = {
-                        BorderColor = Color.LightGray,
-                        BorderSize = 1,
-                        MouseDownBackColor = Color.FromArgb(128, 255, 255),
-                        MouseOverBackColor = Color.FromArgb(192, 255, 255)
+                        BorderColor = Color.FromArgb(224, 224, 224),
+                        BorderSize = 2,
+                        MouseDownBackColor = Color.FromArgb(224, 224, 224),
+                        MouseOverBackColor = Color.FromArgb(235, 235, 235)
                     }//button的appearance
                 };
                 if (i == 0 || startDate.Day == 1)//判斷該月份顯示的第一天
@@ -146,6 +147,7 @@ namespace Final_Project
                     progressBar_panel.Visible = false;
                     timer1.Enabled = false;
                     menu_panel.Visible = true;
+                    calenderBtn.BackColor = Color.LightSteelBlue;
                     FormBorderStyle = FormBorderStyle.Sizable;
                     menu_panel.Size = ClientSize;
                     CreateWeekLabel();
@@ -231,21 +233,21 @@ namespace Final_Project
         {
             mode = 0;
             calenderBtn.BackColor = Color.LightSteelBlue;
-            moneybookBtn.BackColor = mydiaryBtn.BackColor = Color.White;
+            moneybookBtn.BackColor = mydiaryBtn.BackColor = Color.Transparent;
         }
 
         private void moneybookBtn_Click(object sender, EventArgs e)
         {
             mode = 1;
             moneybookBtn.BackColor = Color.LightSteelBlue;
-            calenderBtn.BackColor = mydiaryBtn.BackColor = Color.White;
+            calenderBtn.BackColor = mydiaryBtn.BackColor = Color.Transparent;
         }
 
         private void mydiaryBtn_Click(object sender, EventArgs e)
         {
             mode = 2;
             mydiaryBtn.BackColor = Color.LightSteelBlue;
-            moneybookBtn.BackColor = calenderBtn.BackColor = Color.White;
+            moneybookBtn.BackColor = calenderBtn.BackColor = Color.Transparent;
         }
     }
 }

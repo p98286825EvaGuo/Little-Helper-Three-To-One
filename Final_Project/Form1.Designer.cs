@@ -55,7 +55,7 @@
             // 
             // timer1
             // 
-            this.timer1.Interval = 10;
+            this.timer1.Interval = 800;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // progressBar_panel
@@ -157,6 +157,7 @@
             // 
             // menu_panel
             // 
+            this.menu_panel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.menu_panel.Controls.Add(this.mydiaryBtn);
             this.menu_panel.Controls.Add(this.calenderBtn);
             this.menu_panel.Controls.Add(this.moneybookBtn);
@@ -167,9 +168,14 @@
             // 
             // mydiaryBtn
             // 
-            this.mydiaryBtn.BackColor = System.Drawing.Color.White;
+            this.mydiaryBtn.BackColor = System.Drawing.Color.Transparent;
             this.mydiaryBtn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.mydiaryBtn.Font = new System.Drawing.Font("Forte", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.mydiaryBtn.FlatAppearance.BorderColor = System.Drawing.Color.LightSteelBlue;
+            this.mydiaryBtn.FlatAppearance.BorderSize = 3;
+            this.mydiaryBtn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.LightSteelBlue;
+            this.mydiaryBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightSteelBlue;
+            this.mydiaryBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.mydiaryBtn.Font = new System.Drawing.Font("Ink Free", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.mydiaryBtn.Location = new System.Drawing.Point(811, 142);
             this.mydiaryBtn.Name = "mydiaryBtn";
             this.mydiaryBtn.Size = new System.Drawing.Size(200, 60);
@@ -180,9 +186,14 @@
             // 
             // calenderBtn
             // 
-            this.calenderBtn.BackColor = System.Drawing.Color.White;
+            this.calenderBtn.BackColor = System.Drawing.Color.Transparent;
             this.calenderBtn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.calenderBtn.Font = new System.Drawing.Font("Forte", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.calenderBtn.FlatAppearance.BorderColor = System.Drawing.Color.LightSteelBlue;
+            this.calenderBtn.FlatAppearance.BorderSize = 3;
+            this.calenderBtn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.LightSteelBlue;
+            this.calenderBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightSteelBlue;
+            this.calenderBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.calenderBtn.Font = new System.Drawing.Font("Ink Free", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.calenderBtn.Location = new System.Drawing.Point(811, 10);
             this.calenderBtn.Name = "calenderBtn";
             this.calenderBtn.Size = new System.Drawing.Size(200, 60);
@@ -193,9 +204,14 @@
             // 
             // moneybookBtn
             // 
-            this.moneybookBtn.BackColor = System.Drawing.Color.White;
+            this.moneybookBtn.BackColor = System.Drawing.Color.Transparent;
             this.moneybookBtn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.moneybookBtn.Font = new System.Drawing.Font("Forte", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.moneybookBtn.FlatAppearance.BorderColor = System.Drawing.Color.LightSteelBlue;
+            this.moneybookBtn.FlatAppearance.BorderSize = 3;
+            this.moneybookBtn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.LightSteelBlue;
+            this.moneybookBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightSteelBlue;
+            this.moneybookBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.moneybookBtn.Font = new System.Drawing.Font("Ink Free", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.moneybookBtn.Location = new System.Drawing.Point(811, 76);
             this.moneybookBtn.Name = "moneybookBtn";
             this.moneybookBtn.Size = new System.Drawing.Size(200, 60);

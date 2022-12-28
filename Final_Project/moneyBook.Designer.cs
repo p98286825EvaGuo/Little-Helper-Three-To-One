@@ -39,14 +39,15 @@
             this.addBackBtn = new System.Windows.Forms.Button();
             this.button_icons = new System.Windows.Forms.ImageList(this.components);
             this.inputMoneyPanel = new System.Windows.Forms.Panel();
-            this.moneyAmounttextBox = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.incomeBtn = new System.Windows.Forms.Button();
-            this.label2 = new System.Windows.Forms.Label();
-            this.NotetextBox = new System.Windows.Forms.TextBox();
-            this.expenseBtn = new System.Windows.Forms.Button();
-            this.saveBtn = new System.Windows.Forms.Button();
             this.backIconBtn = new System.Windows.Forms.Button();
+            this.saveBtn = new System.Windows.Forms.Button();
+            this.expenseBtn = new System.Windows.Forms.Button();
+            this.NotetextBox = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.incomeBtn = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.moneyAmounttextBox = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
             this.HomePanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.addPanel.SuspendLayout();
@@ -138,6 +139,7 @@
             // addBackBtn
             // 
             this.addBackBtn.BackColor = System.Drawing.Color.AntiqueWhite;
+            this.addBackBtn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.addBackBtn.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.addBackBtn.FlatAppearance.BorderSize = 2;
             this.addBackBtn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.SandyBrown;
@@ -176,6 +178,7 @@
             // inputMoneyPanel
             // 
             this.inputMoneyPanel.BackColor = System.Drawing.Color.AntiqueWhite;
+            this.inputMoneyPanel.Controls.Add(this.label3);
             this.inputMoneyPanel.Controls.Add(this.backIconBtn);
             this.inputMoneyPanel.Controls.Add(this.saveBtn);
             this.inputMoneyPanel.Controls.Add(this.expenseBtn);
@@ -188,94 +191,6 @@
             this.inputMoneyPanel.Name = "inputMoneyPanel";
             this.inputMoneyPanel.Size = new System.Drawing.Size(985, 455);
             this.inputMoneyPanel.TabIndex = 2;
-            // 
-            // moneyAmounttextBox
-            // 
-            this.moneyAmounttextBox.Font = new System.Drawing.Font("Arial", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.moneyAmounttextBox.Location = new System.Drawing.Point(318, 68);
-            this.moneyAmounttextBox.Name = "moneyAmounttextBox";
-            this.moneyAmounttextBox.Size = new System.Drawing.Size(414, 44);
-            this.moneyAmounttextBox.TabIndex = 0;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Ink Free", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(201, 75);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(108, 34);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "Amount";
-            // 
-            // incomeBtn
-            // 
-            this.incomeBtn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.incomeBtn.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.incomeBtn.FlatAppearance.BorderSize = 3;
-            this.incomeBtn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.SandyBrown;
-            this.incomeBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.BurlyWood;
-            this.incomeBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.incomeBtn.Font = new System.Drawing.Font("Ink Free", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.incomeBtn.ForeColor = System.Drawing.Color.DarkBlue;
-            this.incomeBtn.Location = new System.Drawing.Point(207, 260);
-            this.incomeBtn.Name = "incomeBtn";
-            this.incomeBtn.Size = new System.Drawing.Size(245, 46);
-            this.incomeBtn.TabIndex = 4;
-            this.incomeBtn.Text = "Income";
-            this.incomeBtn.UseVisualStyleBackColor = true;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Ink Free", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(233, 149);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(76, 34);
-            this.label2.TabIndex = 6;
-            this.label2.Text = "Note";
-            // 
-            // NotetextBox
-            // 
-            this.NotetextBox.Font = new System.Drawing.Font("Arial", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.NotetextBox.Location = new System.Drawing.Point(318, 142);
-            this.NotetextBox.Multiline = true;
-            this.NotetextBox.Name = "NotetextBox";
-            this.NotetextBox.Size = new System.Drawing.Size(414, 99);
-            this.NotetextBox.TabIndex = 7;
-            // 
-            // expenseBtn
-            // 
-            this.expenseBtn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.expenseBtn.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.expenseBtn.FlatAppearance.BorderSize = 3;
-            this.expenseBtn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.SandyBrown;
-            this.expenseBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.BurlyWood;
-            this.expenseBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.expenseBtn.Font = new System.Drawing.Font("Ink Free", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.expenseBtn.ForeColor = System.Drawing.Color.DarkBlue;
-            this.expenseBtn.Location = new System.Drawing.Point(487, 260);
-            this.expenseBtn.Name = "expenseBtn";
-            this.expenseBtn.Size = new System.Drawing.Size(245, 46);
-            this.expenseBtn.TabIndex = 8;
-            this.expenseBtn.Text = "Expense";
-            this.expenseBtn.UseVisualStyleBackColor = true;
-            // 
-            // saveBtn
-            // 
-            this.saveBtn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.saveBtn.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.saveBtn.FlatAppearance.BorderSize = 3;
-            this.saveBtn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.SandyBrown;
-            this.saveBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.BurlyWood;
-            this.saveBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.saveBtn.Font = new System.Drawing.Font("Ink Free", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.saveBtn.ForeColor = System.Drawing.Color.DarkBlue;
-            this.saveBtn.Location = new System.Drawing.Point(207, 335);
-            this.saveBtn.Name = "saveBtn";
-            this.saveBtn.Size = new System.Drawing.Size(525, 46);
-            this.saveBtn.TabIndex = 9;
-            this.saveBtn.Text = "Save";
-            this.saveBtn.UseVisualStyleBackColor = true;
             // 
             // backIconBtn
             // 
@@ -295,14 +210,112 @@
             this.backIconBtn.UseVisualStyleBackColor = true;
             this.backIconBtn.Click += new System.EventHandler(this.backIconBtn_Click);
             // 
+            // saveBtn
+            // 
+            this.saveBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.saveBtn.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.saveBtn.FlatAppearance.BorderSize = 3;
+            this.saveBtn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.SandyBrown;
+            this.saveBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.BurlyWood;
+            this.saveBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.saveBtn.Font = new System.Drawing.Font("Ink Free", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.saveBtn.ForeColor = System.Drawing.Color.DarkBlue;
+            this.saveBtn.Location = new System.Drawing.Point(207, 362);
+            this.saveBtn.Name = "saveBtn";
+            this.saveBtn.Size = new System.Drawing.Size(525, 46);
+            this.saveBtn.TabIndex = 9;
+            this.saveBtn.Text = "Save";
+            this.saveBtn.UseVisualStyleBackColor = true;
+            // 
+            // expenseBtn
+            // 
+            this.expenseBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.expenseBtn.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.expenseBtn.FlatAppearance.BorderSize = 3;
+            this.expenseBtn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.SandyBrown;
+            this.expenseBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.BurlyWood;
+            this.expenseBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.expenseBtn.Font = new System.Drawing.Font("Ink Free", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.expenseBtn.ForeColor = System.Drawing.Color.DarkBlue;
+            this.expenseBtn.Location = new System.Drawing.Point(487, 287);
+            this.expenseBtn.Name = "expenseBtn";
+            this.expenseBtn.Size = new System.Drawing.Size(245, 46);
+            this.expenseBtn.TabIndex = 8;
+            this.expenseBtn.Text = "Expense";
+            this.expenseBtn.UseVisualStyleBackColor = true;
+            // 
+            // NotetextBox
+            // 
+            this.NotetextBox.Font = new System.Drawing.Font("微軟正黑體", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.NotetextBox.Location = new System.Drawing.Point(318, 169);
+            this.NotetextBox.Multiline = true;
+            this.NotetextBox.Name = "NotetextBox";
+            this.NotetextBox.Size = new System.Drawing.Size(414, 99);
+            this.NotetextBox.TabIndex = 7;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Ink Free", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(233, 176);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(76, 34);
+            this.label2.TabIndex = 6;
+            this.label2.Text = "Note";
+            // 
+            // incomeBtn
+            // 
+            this.incomeBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.incomeBtn.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.incomeBtn.FlatAppearance.BorderSize = 3;
+            this.incomeBtn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.SandyBrown;
+            this.incomeBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.BurlyWood;
+            this.incomeBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.incomeBtn.Font = new System.Drawing.Font("Ink Free", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.incomeBtn.ForeColor = System.Drawing.Color.DarkBlue;
+            this.incomeBtn.Location = new System.Drawing.Point(207, 287);
+            this.incomeBtn.Name = "incomeBtn";
+            this.incomeBtn.Size = new System.Drawing.Size(245, 46);
+            this.incomeBtn.TabIndex = 4;
+            this.incomeBtn.Text = "Income";
+            this.incomeBtn.UseVisualStyleBackColor = true;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Ink Free", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(201, 102);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(108, 34);
+            this.label1.TabIndex = 2;
+            this.label1.Text = "Amount";
+            // 
+            // moneyAmounttextBox
+            // 
+            this.moneyAmounttextBox.Font = new System.Drawing.Font("Arial", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.moneyAmounttextBox.Location = new System.Drawing.Point(318, 95);
+            this.moneyAmounttextBox.Name = "moneyAmounttextBox";
+            this.moneyAmounttextBox.Size = new System.Drawing.Size(414, 44);
+            this.moneyAmounttextBox.TabIndex = 0;
+            // 
+            // label3
+            // 
+            this.label3.Font = new System.Drawing.Font("Ink Free", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(346, 30);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(269, 62);
+            this.label3.TabIndex = 11;
+            this.label3.Text = "Transportation";
+            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // moneyBook
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(984, 450);
+            this.Controls.Add(this.inputMoneyPanel);
             this.Controls.Add(this.addPanel);
             this.Controls.Add(this.HomePanel);
-            this.Controls.Add(this.inputMoneyPanel);
             this.Name = "moneyBook";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MoneyBook";
@@ -335,5 +348,6 @@
         private System.Windows.Forms.Button saveBtn;
         private System.Windows.Forms.Button expenseBtn;
         private System.Windows.Forms.Button backIconBtn;
+        private System.Windows.Forms.Label label3;
     }
 }
