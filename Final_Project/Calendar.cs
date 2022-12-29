@@ -100,16 +100,6 @@ namespace Final_Project
         {
             Close();
         }
-
-        private void AddBtn_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void CheckBtn_Click(object sender, EventArgs e)
-        {
-
-        }
         private void ChangeLineFont(FontStyle style)
         {
             add_things.SelectionStart = add_things.GetFirstCharIndexFromLine(lineIndex);
@@ -170,8 +160,6 @@ namespace Final_Project
                 ChangeLineFont(FontStyle.Bold);
                 important.Text = "Unimportant";
             }                
-        }
-
-        
+        }        
     }
 }
