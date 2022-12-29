@@ -39,5 +39,10 @@ namespace Final_Project
             Form word = new type2();
             word.ShowDialog();
         }
+
+        private void diary_Load(object sender, EventArgs e)
+        {
+            BackColor = Color.FromArgb(255, 240, 255);
+        }
     }
 }
