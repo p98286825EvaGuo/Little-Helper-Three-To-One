@@ -13,6 +13,18 @@ namespace Final_Project
     public partial class moneyBook : Form
     {
         Button[] iconBtns;
+        int year;
+        int month;
+        int day;
+        public moneyBook(string date)
+        {
+            InitializeComponent();
+            string[] numbers = date.Split('/');
+            year = Convert.ToInt32(numbers[0]);
+            month = Convert.ToInt32(numbers[1]);
+            day = Convert.ToInt32(numbers[2]);
+        }
+
         public moneyBook()
         {
             InitializeComponent();

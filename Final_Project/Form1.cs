@@ -202,7 +202,7 @@ namespace Final_Project
             }
             else if (mode == 1)//記帳
             {
-                MoneyBookFunc();
+                MoneyBookFunc(dateButton.Name);
             }
             else//(mode == 2) 手帳
             {
@@ -219,9 +219,10 @@ namespace Final_Project
             calendar.ShowDialog();
             calendarData[date] = calendar.GetData();
         }
-        private void MoneyBookFunc()
+        private void MoneyBookFunc(string date)
         {
-            Form moneyBook_form = new moneyBook();
+            moneyBook moneyBook_form;
+            moneyBook_form = new moneyBook(date);
             moneyBook_form.ShowDialog();
         }
         private void MyDairyFunc()
