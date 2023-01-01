@@ -39,6 +39,7 @@
             this.addBackBtn = new System.Windows.Forms.Button();
             this.button_icons = new System.Windows.Forms.ImageList(this.components);
             this.inputMoneyPanel = new System.Windows.Forms.Panel();
+            this.label3 = new System.Windows.Forms.Label();
             this.backIconBtn = new System.Windows.Forms.Button();
             this.saveBtn = new System.Windows.Forms.Button();
             this.expenseBtn = new System.Windows.Forms.Button();
@@ -47,11 +48,15 @@
             this.incomeBtn = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.moneyAmounttextBox = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.HomePanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.addPanel.SuspendLayout();
             this.inputMoneyPanel.SuspendLayout();
+            this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // HomePanel
@@ -192,6 +197,16 @@
             this.inputMoneyPanel.Size = new System.Drawing.Size(985, 455);
             this.inputMoneyPanel.TabIndex = 2;
             // 
+            // label3
+            // 
+            this.label3.Font = new System.Drawing.Font("Ink Free", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(346, 30);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(269, 62);
+            this.label3.TabIndex = 11;
+            this.label3.Text = "Transportation";
+            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // backIconBtn
             // 
             this.backIconBtn.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -226,6 +241,7 @@
             this.saveBtn.TabIndex = 9;
             this.saveBtn.Text = "Save";
             this.saveBtn.UseVisualStyleBackColor = true;
+            this.saveBtn.Click += new System.EventHandler(this.saveBtn_Click);
             // 
             // expenseBtn
             // 
@@ -298,24 +314,41 @@
             this.moneyAmounttextBox.Size = new System.Drawing.Size(414, 44);
             this.moneyAmounttextBox.TabIndex = 0;
             // 
-            // label3
+            // panel1
             // 
-            this.label3.Font = new System.Drawing.Font("Ink Free", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(346, 30);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(269, 62);
-            this.label3.TabIndex = 11;
-            this.label3.Text = "Transportation";
-            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.panel1.Controls.Add(this.dataGridView1);
+            this.panel1.Controls.Add(this.comboBox1);
+            this.panel1.Location = new System.Drawing.Point(3, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(981, 455);
+            this.panel1.TabIndex = 3;
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(71, 44);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(164, 20);
+            this.comboBox1.TabIndex = 0;
+            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(65, 100);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(623, 237);
+            this.dataGridView1.TabIndex = 1;
             // 
             // moneyBook
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(984, 450);
-            this.Controls.Add(this.inputMoneyPanel);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.addPanel);
             this.Controls.Add(this.HomePanel);
+            this.Controls.Add(this.inputMoneyPanel);
             this.Name = "moneyBook";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MoneyBook";
@@ -325,6 +358,8 @@
             this.addPanel.ResumeLayout(false);
             this.inputMoneyPanel.ResumeLayout(false);
             this.inputMoneyPanel.PerformLayout();
+            this.panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -349,5 +384,8 @@
         private System.Windows.Forms.Button expenseBtn;
         private System.Windows.Forms.Button backIconBtn;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.ComboBox comboBox1;
     }
 }
