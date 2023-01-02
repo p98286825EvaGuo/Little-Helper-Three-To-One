@@ -12,7 +12,6 @@ namespace Final_Project
 {
     public partial class Calendar : Form
     {
-        //string[] flag = { "[ ]", "[#]", "[V]" };
         int lineIndex = 0;//游標位置
         string textFont = "微軟正黑體";
         bool saved = false;
@@ -34,7 +33,7 @@ namespace Final_Project
         {
             InitializeComponent();
             add_things.LanguageOption = RichTextBoxLanguageOptions.DualFont;
-            first = false;
+            first = true;
         }
         public List<Dictionary<string, string>> GetData() {
             return data;
@@ -45,6 +44,25 @@ namespace Final_Project
                 Text = "Calender";
             else
                 Text = "*Calender";
+        }
+        private void SaveData() {
+            data.Clear();
+            for (int i = 0; i < add_things.Lines.Length; i++)
+            {
+                add_things.SelectionStart = add_things.GetFirstCharIndexFromLine(i);
+                Dictionary<string, string> dataLine = new Dictionary<string, string>();
+                dataLine["thing"] = add_things.Lines[i];
+                /* if fontstyle is bold, then the thing's property is set important */
+                try
+                {
+                    dataLine["Important"] = (add_things.SelectionFont.Style == FontStyle.Bold).ToString();
+                }
+                catch
+                {
+                    dataLine["Important"] = "false";
+                }
+                data.Add(dataLine);
+            }
         }
         private void Calendar_Shown(object sender, EventArgs e)
         {
@@ -72,28 +90,12 @@ namespace Final_Project
             DialogResult result;
             if (!saved) {
                 result = MessageBox.Show("請問是否要儲存變更?", "尚未儲存", MessageBoxButtons.YesNoCancel);
-                if (result == DialogResult.Yes)
+                if (result == DialogResult.Yes) {
                     SetSaved(true);
+                    SaveData();
+                }                    
                 else if (result == DialogResult.Cancel)
                     e.Cancel = true;//取消關閉視窗
-            }
-            if (saved) {
-                data.Clear();
-                for (int i = 0; i < add_things.Lines.Length; i++)
-                {
-                    add_things.SelectionStart = add_things.GetFirstCharIndexFromLine(i);
-                    Dictionary<string, string> dataLine = new Dictionary<string, string>();
-                    dataLine["thing"] = add_things.Lines[i];
-                    /* if fontstyle is bold, then the thing's property is set important */
-                    try
-                    {
-                        dataLine["Important"] = (add_things.SelectionFont.Style == FontStyle.Bold).ToString();
-                    }
-                    catch {
-                        dataLine["Important"] = "false";
-                    }
-                    data.Add(dataLine);
-                }
             }
         }
         private void backBtn_Click(object sender, EventArgs e)
@@ -137,6 +139,7 @@ namespace Final_Project
         private void save_Click(object sender, EventArgs e)
         {
             SetSaved(true);
+            SaveData();
         }
 
         private void delete_Click(object sender, EventArgs e)

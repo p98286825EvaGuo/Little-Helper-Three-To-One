@@ -21,6 +21,7 @@ namespace Final_Project
         int todayOfWeek = 1;//當天日期要顯示的行數
         Button[] calendar = new Button[maxNumber];//日曆
         DateTime localDate = DateTime.Now;
+        DateTime startDate;
 
         //月份&星期
         Label[] week = new Label[7];        
@@ -77,6 +78,7 @@ namespace Final_Project
                 TextAlign = ContentAlignment.MiddleCenter,
                 Font = new Font(textFont, (int)(week[0].Height * 0.4)),
                 Size = new Size(week[0].Width/3, (int)(week[0].Height * 0.8)),
+                BackColor = Color.LightSteelBlue,
             };
             position.Y -= temp.Height;
             temp.Location = position;
@@ -88,7 +90,7 @@ namespace Final_Project
         {
             //計算第一格的日期
             int todayPosition = todayOfWeek * 7 + (int)localDate.DayOfWeek;
-            DateTime startDate = localDate.AddDays(-todayPosition);
+            startDate = localDate.AddDays(-todayPosition);
 
             //建立日期的button
             int buttonSize = (menu_panel.Height - week[0].Height) / (showNumber / 7);
@@ -120,6 +122,25 @@ namespace Final_Project
                 calendar[i].Click += DateButton_Click;
                 menu_panel.Controls.Add(calendar[i]);
                 startDate = startDate.AddDays(1);
+            }
+            startDate = startDate.AddDays(-35);
+        }
+        private void ShowDate(DateTime sDate) {
+            foreach (KeyValuePair<int, Label> entry in monthLabel)
+                menu_panel.Controls.Remove(entry.Value);            
+            monthLabel.Clear();
+            string today = localDate.Date.ToShortDateString();
+            for (int i = 0; i < maxNumber; i++)
+            {
+                calendar[i].Name = sDate.Date.ToShortDateString();
+                calendar[i].Text = $"{sDate.Day}";
+                if (i == 0 || sDate.Day == 1)//判斷該月份顯示的第一天
+                    CreateMonthLabel(calendar[i].Location, sDate.Month, i);
+                if (calendar[i].Name == today)//凸顯當天的日期
+                    calendar[i].FlatAppearance.BorderColor = Color.Gold;
+                else
+                    calendar[i].FlatAppearance.BorderColor = Color.FromArgb(224, 224, 224);
+                sDate = sDate.AddDays(1);
             }
         }
         private void timer1_Tick(object sender, EventArgs e)
@@ -251,7 +272,25 @@ namespace Final_Project
             mydiaryBtn.BackColor = Color.LightSteelBlue;
             moneybookBtn.BackColor = calenderBtn.BackColor = Color.Transparent;
         }
+        private void backpage_Click(object sender, EventArgs e)
+        {
+            startDate = startDate.AddDays(-35);
+            ShowDate(startDate);
+        }
 
+        private void backnow_Click(object sender, EventArgs e)
+        {
+            //計算第一格的日期
+            int todayPosition = todayOfWeek * 7 + (int)localDate.DayOfWeek;
+            startDate = localDate.AddDays(-todayPosition);
+            ShowDate(startDate);
+        }
+
+        private void frontpage_Click(object sender, EventArgs e)
+        {
+            startDate = startDate.AddDays(35);
+            ShowDate(startDate);
+        }
         private void menu_panel_Paint(object sender, PaintEventArgs e)
         {
 
