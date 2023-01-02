@@ -50,7 +50,10 @@ namespace Final_Project
             menu_panel.Visible = false;
             FormBorderStyle = FormBorderStyle.None;
             menu_panel.BackColor = Color.FromArgb(235, 235, 235);
-            //percentage_label.ForeColor = Color.FromArgb(255, 145, 159, 198);            
+            //percentage_label.ForeColor = Color.FromArgb(255, 145, 159, 198);
+            int funcLeft = menu_panel.Width - (leftMargin + mode_panel.Width);
+            mode_panel.Location = new Point(funcLeft, leftMargin);
+            page_panel.Location = new Point(funcLeft, menu_panel.Height - (leftMargin + page_panel.Height));
         }
         private void CreateWeekLabel()//創建星期的label
         {
@@ -202,7 +205,7 @@ namespace Final_Project
             menu_panel.Size = ClientSize;
             int labelHeight = menu_panel.Height / (showNumber / 7) / 5;//weekday label的height
             int labelWidth = (menu_panel.Height - labelHeight) / (showNumber / 7);//weekday label的width
-            int buttonSize = (menu_panel.Height - week[0].Height) / (showNumber / 7);//calendar button的size(width和height相同)
+            int buttonSize = labelWidth;//calendar button的size(width和height相同)
             for (int i = 0; i < maxNumber; i++)
             {
                 //調整weekday label大小
@@ -221,7 +224,10 @@ namespace Final_Project
                 entry.Value.Size = new Size(labelWidth / 3, (int)(labelHeight * 0.8));
                 entry.Value.Location = new Point(calendar[entry.Key].Left, calendar[entry.Key].Top - (int)(labelHeight * 0.8));
                 entry.Value.Font = new Font(textFont, FontSizeInResize((int)(labelHeight * 0.4)));
-            }            
+            }
+            int funcLeft = menu_panel.Width - (leftMargin + mode_panel.Width);
+            mode_panel.Location = new Point(funcLeft, leftMargin);
+            page_panel.Location = new Point(funcLeft, menu_panel.Height - (leftMargin + page_panel.Height));
         }
         private void DateButton_Click(object sender, EventArgs e)
         {

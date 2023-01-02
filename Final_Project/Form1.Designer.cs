@@ -40,21 +40,25 @@
             this.Bar2 = new System.Windows.Forms.Label();
             this.Bar1 = new System.Windows.Forms.Label();
             this.menu_panel = new System.Windows.Forms.Panel();
-            this.mydiaryBtn = new System.Windows.Forms.Button();
+            this.page_panel = new System.Windows.Forms.Panel();
+            this.year = new System.Windows.Forms.Label();
+            this.backpage = new System.Windows.Forms.Button();
+            this.backnow = new System.Windows.Forms.Button();
+            this.frontpage = new System.Windows.Forms.Button();
+            this.mode_panel = new System.Windows.Forms.Panel();
             this.calenderBtn = new System.Windows.Forms.Button();
             this.moneybookBtn = new System.Windows.Forms.Button();
+            this.mydiaryBtn = new System.Windows.Forms.Button();
             this.BottomToolStripPanel = new System.Windows.Forms.ToolStripPanel();
             this.TopToolStripPanel = new System.Windows.Forms.ToolStripPanel();
             this.RightToolStripPanel = new System.Windows.Forms.ToolStripPanel();
             this.LeftToolStripPanel = new System.Windows.Forms.ToolStripPanel();
             this.ContentPanel = new System.Windows.Forms.ToolStripContentPanel();
-            this.backpage = new System.Windows.Forms.Button();
-            this.frontpage = new System.Windows.Forms.Button();
-            this.backnow = new System.Windows.Forms.Button();
-            this.year = new System.Windows.Forms.Label();
             this.progressBar_panel.SuspendLayout();
             this.Bar_panel.SuspendLayout();
             this.menu_panel.SuspendLayout();
+            this.page_panel.SuspendLayout();
+            this.mode_panel.SuspendLayout();
             this.SuspendLayout();
             // 
             // timer1
@@ -70,7 +74,7 @@
             this.progressBar_panel.Controls.Add(this.percentage_label);
             this.progressBar_panel.Controls.Add(this.Bar_panel);
             this.progressBar_panel.Location = new System.Drawing.Point(0, -8);
-            this.progressBar_panel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.progressBar_panel.Margin = new System.Windows.Forms.Padding(4);
             this.progressBar_panel.Name = "progressBar_panel";
             this.progressBar_panel.Size = new System.Drawing.Size(1379, 619);
             this.progressBar_panel.TabIndex = 0;
@@ -123,7 +127,7 @@
             this.Bar_panel.Controls.Add(this.Bar2);
             this.Bar_panel.Controls.Add(this.Bar1);
             this.Bar_panel.Location = new System.Drawing.Point(381, 301);
-            this.Bar_panel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Bar_panel.Margin = new System.Windows.Forms.Padding(4);
             this.Bar_panel.Name = "Bar_panel";
             this.Bar_panel.Size = new System.Drawing.Size(665, 49);
             this.Bar_panel.TabIndex = 1;
@@ -171,37 +175,100 @@
             // menu_panel
             // 
             this.menu_panel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.menu_panel.Controls.Add(this.year);
-            this.menu_panel.Controls.Add(this.backnow);
-            this.menu_panel.Controls.Add(this.frontpage);
-            this.menu_panel.Controls.Add(this.backpage);
-            this.menu_panel.Controls.Add(this.mydiaryBtn);
-            this.menu_panel.Controls.Add(this.calenderBtn);
-            this.menu_panel.Controls.Add(this.moneybookBtn);
+            this.menu_panel.Controls.Add(this.page_panel);
+            this.menu_panel.Controls.Add(this.mode_panel);
             this.menu_panel.Location = new System.Drawing.Point(3, 0);
-            this.menu_panel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.menu_panel.Margin = new System.Windows.Forms.Padding(4);
             this.menu_panel.Name = "menu_panel";
             this.menu_panel.Size = new System.Drawing.Size(1375, 614);
             this.menu_panel.TabIndex = 1;
             // 
-            // mydiaryBtn
+            // page_panel
             // 
-            this.mydiaryBtn.BackColor = System.Drawing.Color.Transparent;
-            this.mydiaryBtn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.mydiaryBtn.FlatAppearance.BorderColor = System.Drawing.Color.LightSteelBlue;
-            this.mydiaryBtn.FlatAppearance.BorderSize = 3;
-            this.mydiaryBtn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.LightSteelBlue;
-            this.mydiaryBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightSteelBlue;
-            this.mydiaryBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.mydiaryBtn.Font = new System.Drawing.Font("Ink Free", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.mydiaryBtn.Location = new System.Drawing.Point(1081, 178);
-            this.mydiaryBtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.mydiaryBtn.Name = "mydiaryBtn";
-            this.mydiaryBtn.Size = new System.Drawing.Size(267, 75);
-            this.mydiaryBtn.TabIndex = 2;
-            this.mydiaryBtn.Text = "MyDiary";
-            this.mydiaryBtn.UseVisualStyleBackColor = false;
-            this.mydiaryBtn.Click += new System.EventHandler(this.mydiaryBtn_Click);
+            this.page_panel.Controls.Add(this.year);
+            this.page_panel.Controls.Add(this.backpage);
+            this.page_panel.Controls.Add(this.backnow);
+            this.page_panel.Controls.Add(this.frontpage);
+            this.page_panel.Location = new System.Drawing.Point(1081, 430);
+            this.page_panel.Name = "page_panel";
+            this.page_panel.Size = new System.Drawing.Size(267, 166);
+            this.page_panel.TabIndex = 8;
+            // 
+            // year
+            // 
+            this.year.Font = new System.Drawing.Font("Ink Free", 21.75F, System.Drawing.FontStyle.Bold);
+            this.year.Location = new System.Drawing.Point(0, 0);
+            this.year.Name = "year";
+            this.year.Size = new System.Drawing.Size(267, 75);
+            this.year.TabIndex = 6;
+            this.year.Text = "2022/2023";
+            this.year.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // backpage
+            // 
+            this.backpage.BackColor = System.Drawing.Color.Transparent;
+            this.backpage.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.backpage.FlatAppearance.BorderColor = System.Drawing.Color.LightSteelBlue;
+            this.backpage.FlatAppearance.BorderSize = 3;
+            this.backpage.FlatAppearance.MouseDownBackColor = System.Drawing.Color.LightSteelBlue;
+            this.backpage.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightSteelBlue;
+            this.backpage.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.backpage.Font = new System.Drawing.Font("Ink Free", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.backpage.Location = new System.Drawing.Point(0, 91);
+            this.backpage.Margin = new System.Windows.Forms.Padding(4);
+            this.backpage.Name = "backpage";
+            this.backpage.Size = new System.Drawing.Size(75, 75);
+            this.backpage.TabIndex = 3;
+            this.backpage.Text = "←";
+            this.backpage.UseVisualStyleBackColor = false;
+            this.backpage.Click += new System.EventHandler(this.backpage_Click);
+            // 
+            // backnow
+            // 
+            this.backnow.BackColor = System.Drawing.Color.Transparent;
+            this.backnow.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.backnow.FlatAppearance.BorderColor = System.Drawing.Color.LightSteelBlue;
+            this.backnow.FlatAppearance.BorderSize = 3;
+            this.backnow.FlatAppearance.MouseDownBackColor = System.Drawing.Color.LightSteelBlue;
+            this.backnow.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightSteelBlue;
+            this.backnow.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.backnow.Font = new System.Drawing.Font("Ink Free", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.backnow.Location = new System.Drawing.Point(97, 91);
+            this.backnow.Margin = new System.Windows.Forms.Padding(4);
+            this.backnow.Name = "backnow";
+            this.backnow.Size = new System.Drawing.Size(75, 75);
+            this.backnow.TabIndex = 5;
+            this.backnow.UseVisualStyleBackColor = false;
+            this.backnow.Click += new System.EventHandler(this.backnow_Click);
+            // 
+            // frontpage
+            // 
+            this.frontpage.BackColor = System.Drawing.Color.Transparent;
+            this.frontpage.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.frontpage.FlatAppearance.BorderColor = System.Drawing.Color.LightSteelBlue;
+            this.frontpage.FlatAppearance.BorderSize = 3;
+            this.frontpage.FlatAppearance.MouseDownBackColor = System.Drawing.Color.LightSteelBlue;
+            this.frontpage.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightSteelBlue;
+            this.frontpage.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.frontpage.Font = new System.Drawing.Font("Ink Free", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.frontpage.Location = new System.Drawing.Point(192, 91);
+            this.frontpage.Margin = new System.Windows.Forms.Padding(4);
+            this.frontpage.Name = "frontpage";
+            this.frontpage.Size = new System.Drawing.Size(75, 75);
+            this.frontpage.TabIndex = 4;
+            this.frontpage.Text = "→";
+            this.frontpage.UseVisualStyleBackColor = false;
+            this.frontpage.Click += new System.EventHandler(this.frontpage_Click);
+            // 
+            // mode_panel
+            // 
+            this.mode_panel.Controls.Add(this.calenderBtn);
+            this.mode_panel.Controls.Add(this.moneybookBtn);
+            this.mode_panel.Controls.Add(this.mydiaryBtn);
+            this.mode_panel.Location = new System.Drawing.Point(1081, 12);
+            this.mode_panel.Name = "mode_panel";
+            this.mode_panel.Size = new System.Drawing.Size(267, 241);
+            this.mode_panel.TabIndex = 7;
             // 
             // calenderBtn
             // 
@@ -213,8 +280,8 @@
             this.calenderBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightSteelBlue;
             this.calenderBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.calenderBtn.Font = new System.Drawing.Font("Ink Free", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.calenderBtn.Location = new System.Drawing.Point(1081, 12);
-            this.calenderBtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.calenderBtn.Location = new System.Drawing.Point(0, 1);
+            this.calenderBtn.Margin = new System.Windows.Forms.Padding(4);
             this.calenderBtn.Name = "calenderBtn";
             this.calenderBtn.Size = new System.Drawing.Size(267, 75);
             this.calenderBtn.TabIndex = 1;
@@ -232,14 +299,33 @@
             this.moneybookBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightSteelBlue;
             this.moneybookBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.moneybookBtn.Font = new System.Drawing.Font("Ink Free", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.moneybookBtn.Location = new System.Drawing.Point(1081, 95);
-            this.moneybookBtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.moneybookBtn.Location = new System.Drawing.Point(0, 84);
+            this.moneybookBtn.Margin = new System.Windows.Forms.Padding(4);
             this.moneybookBtn.Name = "moneybookBtn";
             this.moneybookBtn.Size = new System.Drawing.Size(267, 75);
             this.moneybookBtn.TabIndex = 0;
             this.moneybookBtn.Text = "MoneyBook";
             this.moneybookBtn.UseVisualStyleBackColor = false;
             this.moneybookBtn.Click += new System.EventHandler(this.moneybookBtn_Click);
+            // 
+            // mydiaryBtn
+            // 
+            this.mydiaryBtn.BackColor = System.Drawing.Color.Transparent;
+            this.mydiaryBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.mydiaryBtn.FlatAppearance.BorderColor = System.Drawing.Color.LightSteelBlue;
+            this.mydiaryBtn.FlatAppearance.BorderSize = 3;
+            this.mydiaryBtn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.LightSteelBlue;
+            this.mydiaryBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightSteelBlue;
+            this.mydiaryBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.mydiaryBtn.Font = new System.Drawing.Font("Ink Free", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.mydiaryBtn.Location = new System.Drawing.Point(0, 166);
+            this.mydiaryBtn.Margin = new System.Windows.Forms.Padding(4);
+            this.mydiaryBtn.Name = "mydiaryBtn";
+            this.mydiaryBtn.Size = new System.Drawing.Size(267, 75);
+            this.mydiaryBtn.TabIndex = 2;
+            this.mydiaryBtn.Text = "MyDiary";
+            this.mydiaryBtn.UseVisualStyleBackColor = false;
+            this.mydiaryBtn.Click += new System.EventHandler(this.mydiaryBtn_Click);
             // 
             // BottomToolStripPanel
             // 
@@ -277,72 +363,6 @@
             // 
             this.ContentPanel.Size = new System.Drawing.Size(150, 150);
             // 
-            // backpage
-            // 
-            this.backpage.BackColor = System.Drawing.Color.Transparent;
-            this.backpage.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.backpage.FlatAppearance.BorderColor = System.Drawing.Color.LightSteelBlue;
-            this.backpage.FlatAppearance.BorderSize = 3;
-            this.backpage.FlatAppearance.MouseDownBackColor = System.Drawing.Color.LightSteelBlue;
-            this.backpage.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightSteelBlue;
-            this.backpage.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.backpage.Font = new System.Drawing.Font("Ink Free", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.backpage.Location = new System.Drawing.Point(1081, 520);
-            this.backpage.Margin = new System.Windows.Forms.Padding(4);
-            this.backpage.Name = "backpage";
-            this.backpage.Size = new System.Drawing.Size(75, 75);
-            this.backpage.TabIndex = 3;
-            this.backpage.Text = "←";
-            this.backpage.UseVisualStyleBackColor = false;
-            this.backpage.Click += new System.EventHandler(this.backpage_Click);
-            // 
-            // frontpage
-            // 
-            this.frontpage.BackColor = System.Drawing.Color.Transparent;
-            this.frontpage.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.frontpage.FlatAppearance.BorderColor = System.Drawing.Color.LightSteelBlue;
-            this.frontpage.FlatAppearance.BorderSize = 3;
-            this.frontpage.FlatAppearance.MouseDownBackColor = System.Drawing.Color.LightSteelBlue;
-            this.frontpage.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightSteelBlue;
-            this.frontpage.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.frontpage.Font = new System.Drawing.Font("Ink Free", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.frontpage.Location = new System.Drawing.Point(1273, 520);
-            this.frontpage.Margin = new System.Windows.Forms.Padding(4);
-            this.frontpage.Name = "frontpage";
-            this.frontpage.Size = new System.Drawing.Size(75, 75);
-            this.frontpage.TabIndex = 4;
-            this.frontpage.Text = "→";
-            this.frontpage.UseVisualStyleBackColor = false;
-            this.frontpage.Click += new System.EventHandler(this.frontpage_Click);
-            // 
-            // backnow
-            // 
-            this.backnow.BackColor = System.Drawing.Color.Transparent;
-            this.backnow.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.backnow.FlatAppearance.BorderColor = System.Drawing.Color.LightSteelBlue;
-            this.backnow.FlatAppearance.BorderSize = 3;
-            this.backnow.FlatAppearance.MouseDownBackColor = System.Drawing.Color.LightSteelBlue;
-            this.backnow.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightSteelBlue;
-            this.backnow.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.backnow.Font = new System.Drawing.Font("Ink Free", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.backnow.Location = new System.Drawing.Point(1178, 520);
-            this.backnow.Margin = new System.Windows.Forms.Padding(4);
-            this.backnow.Name = "backnow";
-            this.backnow.Size = new System.Drawing.Size(75, 75);
-            this.backnow.TabIndex = 5;
-            this.backnow.UseVisualStyleBackColor = false;
-            this.backnow.Click += new System.EventHandler(this.backnow_Click);
-            // 
-            // year
-            // 
-            this.year.Font = new System.Drawing.Font("Ink Free", 21.75F, System.Drawing.FontStyle.Bold);
-            this.year.Location = new System.Drawing.Point(1081, 429);
-            this.year.Name = "year";
-            this.year.Size = new System.Drawing.Size(267, 75);
-            this.year.TabIndex = 6;
-            this.year.Text = "2022/2023";
-            this.year.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
@@ -350,7 +370,7 @@
             this.ClientSize = new System.Drawing.Size(1379, 608);
             this.Controls.Add(this.menu_panel);
             this.Controls.Add(this.progressBar_panel);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Little Helper Three To One";
@@ -360,6 +380,8 @@
             this.progressBar_panel.PerformLayout();
             this.Bar_panel.ResumeLayout(false);
             this.menu_panel.ResumeLayout(false);
+            this.page_panel.ResumeLayout(false);
+            this.mode_panel.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -389,6 +411,8 @@
         private System.Windows.Forms.Button frontpage;
         private System.Windows.Forms.Button backpage;
         private System.Windows.Forms.Label year;
+        private System.Windows.Forms.Panel mode_panel;
+        private System.Windows.Forms.Panel page_panel;
     }
 }
 
