@@ -12,6 +12,7 @@ namespace Final_Project
 {
     public partial class Calendar : Form
     {
+        FontStyle[] mode = { FontStyle.Regular, FontStyle.Bold, FontStyle.Strikeout};
         int lineIndex = 0;//游標位置
         string textFont = "微軟正黑體";
         bool saved = false;
@@ -19,7 +20,7 @@ namespace Final_Project
         List<Dictionary<string, string>> data = new List<Dictionary<string, string>>();
         /*  data = [{
                     "thing" : <string>,
-                    "important" : <bool> 
+                    "property" : <int> (0,1 or 2) 
                 },...
             ]*/
         public Calendar(List<Dictionary<string, string>> originData)
@@ -55,11 +56,16 @@ namespace Final_Project
                 /* if fontstyle is bold, then the thing's property is set important */
                 try
                 {
-                    dataLine["Important"] = (add_things.SelectionFont.Style == FontStyle.Bold).ToString();
+                    if (add_things.SelectionFont.Style == FontStyle.Bold)
+                        dataLine["property"] = "1";
+                    else if (add_things.SelectionFont.Style == FontStyle.Strikeout)
+                        dataLine["property"] = "2";
+                    else
+                        dataLine["property"] = "0";
                 }
                 catch
                 {
-                    dataLine["Important"] = "false";
+                    dataLine["property"] = "0";
                 }
                 data.Add(dataLine);
             }
@@ -72,8 +78,8 @@ namespace Final_Project
             add_things.Lines = temp.ToArray();
             lineIndex = 0;
             for (int i = 0; i < data.Count; i++) {
-                if (bool.Parse(data[i]["Important"]))
-                    ChangeLineFont(FontStyle.Bold);
+                int property = int.Parse(data[i]["property"]);
+                ChangeLineFont(mode[property]);
                 lineIndex++;
             }
             if (temp.Count > 0)
@@ -114,9 +120,17 @@ namespace Final_Project
         private void GetLineIndex() {
             lineIndex = add_things.GetLineFromCharIndex(add_things.SelectionStart);//游標所在的行數
             if (add_things.SelectionFont.Style == FontStyle.Bold)
+            {
                 important.Text = "Unimportant";
-            else
+                done.Text = "Done";
+            }
+            else {
                 important.Text = "Important";
+                if (add_things.SelectionFont.Style == FontStyle.Strikeout)
+                    done.Text = "Undone";
+                else
+                    done.Text = "Done";
+            }               
         }
         private void add_things_MouseClick(object sender, MouseEventArgs e)
         {
@@ -129,7 +143,7 @@ namespace Final_Project
         }
         private void add_things_KeyPress(object sender, KeyPressEventArgs e)
         {
-            GetLineIndex();
+            GetLineIndex();            
         }
         private void add_things_KeyUp(object sender, KeyEventArgs e)
         {
@@ -149,6 +163,9 @@ namespace Final_Project
             add_things.SelectionStart = add_things.GetFirstCharIndexFromLine(lineIndex);
             add_things.SelectionLength = add_things.Lines[lineIndex].Length + 1;
             add_things.SelectedText = string.Empty;
+            ChangeLineFont(FontStyle.Regular);
+            important.Text = "Important";
+            done.Text = "Done";
         }
 
         private void important_Click(object sender, EventArgs e)
@@ -163,6 +180,20 @@ namespace Final_Project
                 ChangeLineFont(FontStyle.Bold);
                 important.Text = "Unimportant";
             }                
-        }        
+        }
+
+        private void Done_Click(object sender, EventArgs e)
+        {
+            if (add_things.SelectionFont.Style == FontStyle.Strikeout)
+            {
+                ChangeLineFont(FontStyle.Regular);
+                done.Text = "Done";
+            }
+            else
+            {
+                ChangeLineFont(FontStyle.Strikeout);
+                done.Text = "Undone";
+            }
+        }
     }
 }
