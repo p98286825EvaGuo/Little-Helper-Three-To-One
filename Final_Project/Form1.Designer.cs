@@ -51,6 +51,7 @@
             this.backpage = new System.Windows.Forms.Button();
             this.frontpage = new System.Windows.Forms.Button();
             this.backnow = new System.Windows.Forms.Button();
+            this.year = new System.Windows.Forms.Label();
             this.progressBar_panel.SuspendLayout();
             this.Bar_panel.SuspendLayout();
             this.menu_panel.SuspendLayout();
@@ -170,6 +171,7 @@
             // menu_panel
             // 
             this.menu_panel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.menu_panel.Controls.Add(this.year);
             this.menu_panel.Controls.Add(this.backnow);
             this.menu_panel.Controls.Add(this.frontpage);
             this.menu_panel.Controls.Add(this.backpage);
@@ -331,6 +333,16 @@
             this.backnow.UseVisualStyleBackColor = false;
             this.backnow.Click += new System.EventHandler(this.backnow_Click);
             // 
+            // year
+            // 
+            this.year.Font = new System.Drawing.Font("Ink Free", 21.75F, System.Drawing.FontStyle.Bold);
+            this.year.Location = new System.Drawing.Point(1081, 429);
+            this.year.Name = "year";
+            this.year.Size = new System.Drawing.Size(267, 75);
+            this.year.TabIndex = 6;
+            this.year.Text = "2022/2023";
+            this.year.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
@@ -376,6 +388,7 @@
         private System.Windows.Forms.Button backnow;
         private System.Windows.Forms.Button frontpage;
         private System.Windows.Forms.Button backpage;
+        private System.Windows.Forms.Label year;
     }
 }
 

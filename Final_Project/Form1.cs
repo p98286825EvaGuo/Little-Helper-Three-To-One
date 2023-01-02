@@ -91,7 +91,7 @@ namespace Final_Project
             //計算第一格的日期
             int todayPosition = todayOfWeek * 7 + (int)localDate.DayOfWeek;
             startDate = localDate.AddDays(-todayPosition);
-
+            int startYear = startDate.Year;
             //建立日期的button
             int buttonSize = (menu_panel.Height - week[0].Height) / (showNumber / 7);
             for (int i = 0; i < maxNumber; i++)
@@ -123,6 +123,10 @@ namespace Final_Project
                 menu_panel.Controls.Add(calendar[i]);
                 startDate = startDate.AddDays(1);
             }
+            if (startYear == startDate.Year)
+                year.Text = startYear.ToString();
+            else
+                year.Text = $"{startYear}/{startDate.Year}";
             startDate = startDate.AddDays(-35);
         }
         private void ShowDate(DateTime sDate) {
@@ -130,6 +134,7 @@ namespace Final_Project
                 menu_panel.Controls.Remove(entry.Value);            
             monthLabel.Clear();
             string today = localDate.Date.ToShortDateString();
+            int startYear = sDate.Year;
             for (int i = 0; i < maxNumber; i++)
             {
                 calendar[i].Name = sDate.Date.ToShortDateString();
@@ -142,6 +147,10 @@ namespace Final_Project
                     calendar[i].FlatAppearance.BorderColor = Color.FromArgb(224, 224, 224);
                 sDate = sDate.AddDays(1);
             }
+            if (startYear == sDate.Year)
+                year.Text = startYear.ToString();
+            else
+                year.Text = $"{startYear}/{sDate.Year}";
         }
         private void timer1_Tick(object sender, EventArgs e)
         {
