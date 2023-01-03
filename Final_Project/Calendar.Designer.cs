@@ -34,19 +34,21 @@
             this.important = new System.Windows.Forms.Button();
             this.delete = new System.Windows.Forms.Button();
             this.save = new System.Windows.Forms.Button();
+            this.done = new System.Windows.Forms.Button();
             this.work_panel.SuspendLayout();
             this.SuspendLayout();
             // 
             // work_panel
             // 
             this.work_panel.BackColor = System.Drawing.Color.Beige;
+            this.work_panel.Controls.Add(this.done);
             this.work_panel.Controls.Add(this.add_things);
             this.work_panel.Controls.Add(this.work_back);
             this.work_panel.Controls.Add(this.important);
             this.work_panel.Controls.Add(this.delete);
             this.work_panel.Controls.Add(this.save);
             this.work_panel.Location = new System.Drawing.Point(-1, -2);
-            this.work_panel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.work_panel.Margin = new System.Windows.Forms.Padding(4);
             this.work_panel.Name = "work_panel";
             this.work_panel.Size = new System.Drawing.Size(1316, 568);
             this.work_panel.TabIndex = 5;
@@ -58,7 +60,7 @@
             this.add_things.Location = new System.Drawing.Point(63, 30);
             this.add_things.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.add_things.Name = "add_things";
-            this.add_things.Size = new System.Drawing.Size(869, 506);
+            this.add_things.Size = new System.Drawing.Size(869, 507);
             this.add_things.TabIndex = 6;
             this.add_things.Text = "asd\nasd\n44\n4\ns";
             this.add_things.MouseClick += new System.Windows.Forms.MouseEventHandler(this.add_things_MouseClick);
@@ -76,8 +78,8 @@
             this.work_back.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.work_back.Font = new System.Drawing.Font("Ink Free", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.work_back.ForeColor = System.Drawing.Color.Sienna;
-            this.work_back.Location = new System.Drawing.Point(1003, 316);
-            this.work_back.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.work_back.Location = new System.Drawing.Point(1003, 478);
+            this.work_back.Margin = new System.Windows.Forms.Padding(4);
             this.work_back.Name = "work_back";
             this.work_back.Size = new System.Drawing.Size(272, 59);
             this.work_back.TabIndex = 5;
@@ -95,8 +97,8 @@
             this.important.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.important.Font = new System.Drawing.Font("Ink Free", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.important.ForeColor = System.Drawing.Color.Sienna;
-            this.important.Location = new System.Drawing.Point(1003, 222);
-            this.important.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.important.Location = new System.Drawing.Point(1003, 254);
+            this.important.Margin = new System.Windows.Forms.Padding(4);
             this.important.Name = "important";
             this.important.Size = new System.Drawing.Size(272, 59);
             this.important.TabIndex = 3;
@@ -114,8 +116,8 @@
             this.delete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.delete.Font = new System.Drawing.Font("Ink Free", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.delete.ForeColor = System.Drawing.Color.Sienna;
-            this.delete.Location = new System.Drawing.Point(1003, 131);
-            this.delete.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.delete.Location = new System.Drawing.Point(1003, 142);
+            this.delete.Margin = new System.Windows.Forms.Padding(4);
             this.delete.Name = "delete";
             this.delete.Size = new System.Drawing.Size(272, 59);
             this.delete.TabIndex = 1;
@@ -133,14 +135,33 @@
             this.save.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.save.Font = new System.Drawing.Font("Ink Free", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.save.ForeColor = System.Drawing.Color.Sienna;
-            this.save.Location = new System.Drawing.Point(1003, 44);
-            this.save.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.save.Location = new System.Drawing.Point(1003, 30);
+            this.save.Margin = new System.Windows.Forms.Padding(4);
             this.save.Name = "save";
             this.save.Size = new System.Drawing.Size(272, 59);
             this.save.TabIndex = 0;
             this.save.Text = "Save";
             this.save.UseVisualStyleBackColor = true;
             this.save.Click += new System.EventHandler(this.save_Click);
+            // 
+            // done
+            // 
+            this.done.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.done.FlatAppearance.BorderColor = System.Drawing.Color.Gold;
+            this.done.FlatAppearance.BorderSize = 3;
+            this.done.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gold;
+            this.done.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Khaki;
+            this.done.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.done.Font = new System.Drawing.Font("Ink Free", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.done.ForeColor = System.Drawing.Color.Sienna;
+            this.done.Location = new System.Drawing.Point(1003, 366);
+            this.done.Margin = new System.Windows.Forms.Padding(4);
+            this.done.Name = "done";
+            this.done.Size = new System.Drawing.Size(272, 59);
+            this.done.TabIndex = 7;
+            this.done.Text = "Done";
+            this.done.UseVisualStyleBackColor = true;
+            this.done.Click += new System.EventHandler(this.Done_Click);
             // 
             // Calendar
             // 
@@ -166,5 +187,6 @@
         private System.Windows.Forms.Button save;
         private System.Windows.Forms.Button work_back;
         private System.Windows.Forms.RichTextBox add_things;
+        private System.Windows.Forms.Button done;
     }
 }
