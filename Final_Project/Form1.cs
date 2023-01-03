@@ -33,6 +33,7 @@ namespace Final_Project
         string textFont = "Arial";
         int leftMargin = 20;//日曆左邊的間隔
         int mode = 0;
+        string[] symbol = { " [+] ", " [*] ", " [v] ", ""};
 
         //data
         Dictionary<string, List<Dictionary<string, string>> > calendarData = new Dictionary<string, List<Dictionary<string, string>>>();
@@ -119,8 +120,9 @@ namespace Final_Project
                         MouseOverBackColor = Color.FromArgb(235, 235, 235)
                     }//button的appearance
                 };
-                string filename = calendar[i].Name.Replace("/", "");
-                ReadCalendarData(filename);
+                ReadCalendarData(calendar[i].Name);
+                int index = CheckState(calendar[i].Name);
+                calendar[i].Text += symbol[index];
                 if (i == 0 || startDate.Day == 1)//判斷該月份顯示的第一天
                     CreateMonthLabel(calendar[i].Location, startDate.Month, i);
                 if (i % 7 == 0 || i % 7 == 6)//假日
@@ -147,7 +149,9 @@ namespace Final_Project
             for (int i = 0; i < maxNumber; i++)
             {
                 calendar[i].Name = sDate.ToString("yyyyMMdd");
-                calendar[i].Text = $"{sDate.Day}";
+                ReadCalendarData(calendar[i].Name);
+                int index = CheckState(calendar[i].Name);
+                calendar[i].Text = $"{sDate.Day}{symbol[index]}";                
                 if (i == 0 || sDate.Day == 1)//判斷該月份顯示的第一天
                     CreateMonthLabel(calendar[i].Location, sDate.Month, i);
                 if (calendar[i].Name == today)//凸顯當天的日期
@@ -162,9 +166,10 @@ namespace Final_Project
             else
                 year.Text = $"{startYear}/{sDate.Year}";
         }
-        private void ReadCalendarData(string filename) {
+        private void ReadCalendarData(string filename)//讀行事曆資料
+        {
             string path = $"CalendarData\\{filename}.txt";
-            if (!File.Exists(path))
+            if (!File.Exists(path) || calendarData.ContainsKey(filename) || mode != 0)
                 return;
             //FileInfo fileInfo = new FileInfo(filename);
             calendarData[filename] = new List<Dictionary<string, string>>();
@@ -187,6 +192,32 @@ namespace Final_Project
                 });
             } while (true);
             sr.Close();
+        }
+        private int CheckState(string date) {
+            //0:unimp, 1:imp, 2:all done, 3:no things
+            if (mode!=0 || !calendarData.ContainsKey(date))
+                return 3;
+            bool done = true;
+            bool imp = false;
+            bool IsThing = false;
+            for (int i = 0; i < calendarData[date].Count; i++) {
+                IsThing = true;
+                if (calendarData[date][i]["property"] != "2")
+                    done = false;
+                if (calendarData[date][i]["property"] == "1")
+                    imp = true;
+            }
+            if (IsThing)
+            {
+                if (done)
+                    return 2;
+                if (imp)
+                    return 1;
+                else
+                    return 0;
+            }
+            else
+                return 3;
         }
         private void timer1_Tick(object sender, EventArgs e)
         {
@@ -268,6 +299,11 @@ namespace Final_Project
             if (mode == 0)//行事曆
             {
                 CalendarFunc(dateButton.Name);
+                int index = CheckState(dateButton.Name);
+                string day = dateButton.Name.Substring(6, 2);
+                if (day[0] == '0')
+                    day = day[1].ToString();
+                dateButton.Text = day + symbol[index];
             }
             else if (mode == 1)//記帳
             {
@@ -282,9 +318,9 @@ namespace Final_Project
         {
             Calendar calendar;
             if(calendarData.ContainsKey(date))
-                calendar = new Calendar(calendarData[date], date.Replace("/",""));
+                calendar = new Calendar(calendarData[date], date);
             else
-                calendar = new Calendar(date.Replace("/", ""));
+                calendar = new Calendar(date);
             calendar.ShowDialog();
             calendarData[date] = calendar.GetData();
         }
@@ -305,6 +341,7 @@ namespace Final_Project
             mode = 0;
             calenderBtn.BackColor = Color.LightSteelBlue;
             moneybookBtn.BackColor = mydiaryBtn.BackColor = Color.Transparent;
+            ShowDate(startDate);
         }
 
         private void moneybookBtn_Click(object sender, EventArgs e)
@@ -312,6 +349,7 @@ namespace Final_Project
             mode = 1;
             moneybookBtn.BackColor = Color.LightSteelBlue;
             calenderBtn.BackColor = mydiaryBtn.BackColor = Color.Transparent;
+            ShowDate(startDate);
         }
 
         private void mydiaryBtn_Click(object sender, EventArgs e)
@@ -319,6 +357,7 @@ namespace Final_Project
             mode = 2;
             mydiaryBtn.BackColor = Color.LightSteelBlue;
             moneybookBtn.BackColor = calenderBtn.BackColor = Color.Transparent;
+            ShowDate(startDate);
         }
         private void backpage_Click(object sender, EventArgs e)
         {
