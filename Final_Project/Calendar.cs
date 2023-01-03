@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -15,6 +16,7 @@ namespace Final_Project
         FontStyle[] mode = { FontStyle.Regular, FontStyle.Bold, FontStyle.Strikeout};
         int lineIndex = 0;//游標位置
         string textFont = "微軟正黑體";
+        string filename = "";
         bool saved = false;
         bool first = true;
         List<Dictionary<string, string>> data = new List<Dictionary<string, string>>();
@@ -23,18 +25,20 @@ namespace Final_Project
                     "property" : <int> (0,1 or 2) 
                 },...
             ]*/
-        public Calendar(List<Dictionary<string, string>> originData)
+        public Calendar(List<Dictionary<string, string>> originData, string f)
         {
             InitializeComponent();
             add_things.LanguageOption = RichTextBoxLanguageOptions.DualFont;
             data = originData;
             first = true;
+            filename = f;
         }
-        public Calendar()
+        public Calendar(string f)
         {
             InitializeComponent();
             add_things.LanguageOption = RichTextBoxLanguageOptions.DualFont;
             first = true;
+            filename = f;
         }
         public List<Dictionary<string, string>> GetData() {
             return data;
@@ -47,7 +51,12 @@ namespace Final_Project
                 Text = "*Calender";
         }
         private void SaveData() {
+            if (saved)
+                return;
             data.Clear();
+            string path = $"CalendarData\\{filename}.txt";
+            FileInfo finfo = new FileInfo(path);
+            StreamWriter sw = finfo.CreateText();
             for (int i = 0; i < add_things.Lines.Length; i++)
             {
                 add_things.SelectionStart = add_things.GetFirstCharIndexFromLine(i);
@@ -67,8 +76,11 @@ namespace Final_Project
                 {
                     dataLine["property"] = "0";
                 }
+                sw.WriteLine($"{dataLine["property"]}:{dataLine["thing"]}");
                 data.Add(dataLine);
             }
+            sw.Flush();
+            sw.Close();
         }
         private void Calendar_Shown(object sender, EventArgs e)
         {
@@ -96,9 +108,9 @@ namespace Final_Project
             DialogResult result;
             if (!saved) {
                 result = MessageBox.Show("請問是否要儲存變更?", "尚未儲存", MessageBoxButtons.YesNoCancel);
-                if (result == DialogResult.Yes) {
-                    SetSaved(true);
+                if (result == DialogResult.Yes) {                    
                     SaveData();
+                    SetSaved(true);
                 }                    
                 else if (result == DialogResult.Cancel)
                     e.Cancel = true;//取消關閉視窗
@@ -151,9 +163,9 @@ namespace Final_Project
         }
 
         private void save_Click(object sender, EventArgs e)
-        {
-            SetSaved(true);
+        {            
             SaveData();
+            SetSaved(true);
         }
 
         private void delete_Click(object sender, EventArgs e)

@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
 
 namespace Final_Project
 {
@@ -54,6 +55,8 @@ namespace Final_Project
             int funcLeft = menu_panel.Width - (leftMargin + mode_panel.Width);
             mode_panel.Location = new Point(funcLeft, leftMargin);
             page_panel.Location = new Point(funcLeft, menu_panel.Height - (leftMargin + page_panel.Height));
+            if (!Directory.Exists("CalendarData"))
+                Directory.CreateDirectory("CalendarData");
         }
         private void CreateWeekLabel()//創建星期的label
         {
@@ -101,7 +104,7 @@ namespace Final_Project
             {
                 calendar[i] = new Button//Button的properties
                 {
-                    Name = startDate.Date.ToShortDateString(),
+                    Name = startDate.ToString("yyyyMMdd"),
                     Size = new Size(buttonSize, buttonSize),
                     Location = new Point(leftMargin + (i % 7) * buttonSize, week[0].Height + (i / 7) * buttonSize),
                     Text = $"{startDate.Day}",
@@ -116,6 +119,8 @@ namespace Final_Project
                         MouseOverBackColor = Color.FromArgb(235, 235, 235)
                     }//button的appearance
                 };
+                string filename = calendar[i].Name.Replace("/", "");
+                ReadCalendarData(filename);
                 if (i == 0 || startDate.Day == 1)//判斷該月份顯示的第一天
                     CreateMonthLabel(calendar[i].Location, startDate.Month, i);
                 if (i % 7 == 0 || i % 7 == 6)//假日
@@ -126,6 +131,7 @@ namespace Final_Project
                 menu_panel.Controls.Add(calendar[i]);
                 startDate = startDate.AddDays(1);
             }
+            //顯示年份
             if (startYear == startDate.Year)
                 year.Text = startYear.ToString();
             else
@@ -136,11 +142,11 @@ namespace Final_Project
             foreach (KeyValuePair<int, Label> entry in monthLabel)
                 menu_panel.Controls.Remove(entry.Value);            
             monthLabel.Clear();
-            string today = localDate.Date.ToShortDateString();
+            string today = localDate.ToString("yyyyMMdd");
             int startYear = sDate.Year;
             for (int i = 0; i < maxNumber; i++)
             {
-                calendar[i].Name = sDate.Date.ToShortDateString();
+                calendar[i].Name = sDate.ToString("yyyyMMdd");
                 calendar[i].Text = $"{sDate.Day}";
                 if (i == 0 || sDate.Day == 1)//判斷該月份顯示的第一天
                     CreateMonthLabel(calendar[i].Location, sDate.Month, i);
@@ -150,10 +156,37 @@ namespace Final_Project
                     calendar[i].FlatAppearance.BorderColor = Color.FromArgb(224, 224, 224);
                 sDate = sDate.AddDays(1);
             }
+            //顯示年份
             if (startYear == sDate.Year)
                 year.Text = startYear.ToString();
             else
                 year.Text = $"{startYear}/{sDate.Year}";
+        }
+        private void ReadCalendarData(string filename) {
+            string path = $"CalendarData\\{filename}.txt";
+            if (!File.Exists(path))
+                return;
+            //FileInfo fileInfo = new FileInfo(filename);
+            calendarData[filename] = new List<Dictionary<string, string>>();
+            StreamReader sr = new StreamReader(path);
+            do{
+                string data = sr.ReadLine();
+                if (data == null) break;
+                string[] dataSplit = data.Split(':');
+                string property = dataSplit[0];
+                string thing = "";
+                for (int i = 1; i < dataSplit.Length; i++) {
+                    if(i == 1)
+                        thing += dataSplit[i];
+                    else
+                        thing += ":" + dataSplit[i];
+                }
+                calendarData[filename].Add(new Dictionary<string, string> {
+                    { "thing", thing },
+                    { "property", property },
+                });
+            } while (true);
+            sr.Close();
         }
         private void timer1_Tick(object sender, EventArgs e)
         {
@@ -249,9 +282,9 @@ namespace Final_Project
         {
             Calendar calendar;
             if(calendarData.ContainsKey(date))
-                calendar = new Calendar(calendarData[date]);
+                calendar = new Calendar(calendarData[date], date.Replace("/",""));
             else
-                calendar = new Calendar();
+                calendar = new Calendar(date.Replace("/", ""));
             calendar.ShowDialog();
             calendarData[date] = calendar.GetData();
         }
