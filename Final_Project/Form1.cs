@@ -105,7 +105,7 @@ namespace Final_Project
             {
                 calendar[i] = new Button//Button的properties
                 {
-                    Name = startDate.ToString("yyyyMMdd"),
+                    Name = startDate.ToString("yyyy/MM/dd"),
                     Size = new Size(buttonSize, buttonSize),
                     Location = new Point(leftMargin + (i % 7) * buttonSize, week[0].Height + (i / 7) * buttonSize),
                     Text = $"{startDate.Day}",
@@ -120,8 +120,8 @@ namespace Final_Project
                         MouseOverBackColor = Color.FromArgb(235, 235, 235)
                     }//button的appearance
                 };
-                ReadCalendarData(calendar[i].Name);
-                int index = CheckState(calendar[i].Name);
+                ReadCalendarData(calendar[i].Name.Replace("/",""));
+                int index = CheckState(calendar[i].Name.Replace("/", ""));
                 calendar[i].Text += symbol[index];
                 if (i == 0 || startDate.Day == 1)//判斷該月份顯示的第一天
                     CreateMonthLabel(calendar[i].Location, startDate.Month, i);
@@ -144,13 +144,13 @@ namespace Final_Project
             foreach (KeyValuePair<int, Label> entry in monthLabel)
                 menu_panel.Controls.Remove(entry.Value);            
             monthLabel.Clear();
-            string today = localDate.ToString("yyyyMMdd");
+            string today = localDate.ToString("yyyy/MM/dd");
             int startYear = sDate.Year;
             for (int i = 0; i < maxNumber; i++)
             {
-                calendar[i].Name = sDate.ToString("yyyyMMdd");
-                ReadCalendarData(calendar[i].Name);
-                int index = CheckState(calendar[i].Name);
+                calendar[i].Name = sDate.ToString("yyyy/MM/dd");
+                ReadCalendarData(calendar[i].Name.Replace("/", ""));
+                int index = CheckState(calendar[i].Name.Replace("/", ""));
                 calendar[i].Text = $"{sDate.Day}{symbol[index]}";                
                 if (i == 0 || sDate.Day == 1)//判斷該月份顯示的第一天
                     CreateMonthLabel(calendar[i].Location, sDate.Month, i);
@@ -298,9 +298,10 @@ namespace Final_Project
             Button dateButton = (Button)sender;
             if (mode == 0)//行事曆
             {
-                CalendarFunc(dateButton.Name);
-                int index = CheckState(dateButton.Name);
-                string day = dateButton.Name.Substring(6, 2);
+                string dateNumber = dateButton.Name.Replace("/", "");
+                CalendarFunc(dateNumber);
+                int index = CheckState(dateNumber);
+                string day = dateNumber.Substring(6, 2);
                 if (day[0] == '0')
                     day = day[1].ToString();
                 dateButton.Text = day + symbol[index];

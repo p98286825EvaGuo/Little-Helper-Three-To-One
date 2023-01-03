@@ -54,6 +54,7 @@
             this.RightToolStripPanel = new System.Windows.Forms.ToolStripPanel();
             this.LeftToolStripPanel = new System.Windows.Forms.ToolStripPanel();
             this.ContentPanel = new System.Windows.Forms.ToolStripContentPanel();
+            this.button1 = new System.Windows.Forms.Button();
             this.progressBar_panel.SuspendLayout();
             this.Bar_panel.SuspendLayout();
             this.menu_panel.SuspendLayout();
@@ -262,12 +263,13 @@
             // 
             // mode_panel
             // 
+            this.mode_panel.Controls.Add(this.button1);
             this.mode_panel.Controls.Add(this.calenderBtn);
             this.mode_panel.Controls.Add(this.moneybookBtn);
             this.mode_panel.Controls.Add(this.mydiaryBtn);
             this.mode_panel.Location = new System.Drawing.Point(1081, 12);
             this.mode_panel.Name = "mode_panel";
-            this.mode_panel.Size = new System.Drawing.Size(267, 241);
+            this.mode_panel.Size = new System.Drawing.Size(267, 330);
             this.mode_panel.TabIndex = 7;
             // 
             // calenderBtn
@@ -363,6 +365,25 @@
             // 
             this.ContentPanel.Size = new System.Drawing.Size(150, 150);
             // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.Transparent;
+            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button1.FlatAppearance.BorderColor = System.Drawing.Color.LightSteelBlue;
+            this.button1.FlatAppearance.BorderSize = 3;
+            this.button1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.LightSteelBlue;
+            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightSteelBlue;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Ink Free", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Location = new System.Drawing.Point(0, 249);
+            this.button1.Margin = new System.Windows.Forms.Padding(4);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(267, 75);
+            this.button1.TabIndex = 9;
+            this.button1.Text = "Exit";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
@@ -413,6 +434,7 @@
         private System.Windows.Forms.Label year;
         private System.Windows.Forms.Panel mode_panel;
         private System.Windows.Forms.Panel page_panel;
+        private System.Windows.Forms.Button button1;
     }
 }
 
