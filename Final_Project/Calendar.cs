@@ -46,9 +46,9 @@ namespace Final_Project
         private void SetSaved(bool s) {
             saved = s;
             if (saved)
-                Text = "Calender";
+                Text = "Calender : " + filename;
             else
-                Text = "*Calender";
+                Text = "*Calender : " + filename;
         }
         private void SaveData() {
             if (saved)
