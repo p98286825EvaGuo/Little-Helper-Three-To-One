@@ -312,7 +312,7 @@ namespace Final_Project
             }
             else//(mode == 2) 手帳
             {
-                MyDairyFunc();
+                MyDairyFunc(dateButton.Name);
             }
         }
         private void CalendarFunc(string date)
@@ -331,10 +331,14 @@ namespace Final_Project
             moneyBook_form = new moneyBook(date);
             moneyBook_form.ShowDialog();
         }
-        private void MyDairyFunc()
+        private void MyDairyFunc(string date)
         {
-            Form diary_form = new diary();
+            diary diary_form;
+            diary_form = new diary(date);
             diary_form.ShowDialog();
+            /*type2 type2_form;
+            type2_form = new type2(date);
+            type2_form.ShowDialog();*/
         }
 
         private void calenderBtn_Click(object sender, EventArgs e)

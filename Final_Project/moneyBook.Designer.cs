@@ -30,11 +30,11 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(moneyBook));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend3 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.HomePanel = new System.Windows.Forms.Panel();
             this.backBtn = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -54,27 +54,28 @@
             this.label1 = new System.Windows.Forms.Label();
             this.moneyAmounttextBox = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label8 = new System.Windows.Forms.Label();
+            this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.expenseLabel = new System.Windows.Forms.Label();
+            this.incomeLabel = new System.Windows.Forms.Label();
+            this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.button2 = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.button2 = new System.Windows.Forms.Button();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
-            this.incomeLabel = new System.Windows.Forms.Label();
-            this.expenseLabel = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
-            this.label8 = new System.Windows.Forms.Label();
+            this.button3 = new System.Windows.Forms.Button();
             this.HomePanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.addPanel.SuspendLayout();
             this.inputMoneyPanel.SuspendLayout();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // HomePanel
@@ -337,6 +338,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.AntiqueWhite;
+            this.panel1.Controls.Add(this.button3);
             this.panel1.Controls.Add(this.label8);
             this.panel1.Controls.Add(this.chart1);
             this.panel1.Controls.Add(this.label7);
@@ -354,6 +356,111 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(981, 455);
             this.panel1.TabIndex = 3;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Ink Free", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(118, 281);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(28, 30);
+            this.label8.TabIndex = 21;
+            this.label8.Text = "0";
+            // 
+            // chart1
+            // 
+            this.chart1.BorderlineColor = System.Drawing.Color.Transparent;
+            chartArea2.Name = "ChartArea1";
+            this.chart1.ChartAreas.Add(chartArea2);
+            legend2.Name = "Legend1";
+            this.chart1.Legends.Add(legend2);
+            this.chart1.Location = new System.Drawing.Point(18, 44);
+            this.chart1.Name = "chart1";
+            series2.ChartArea = "ChartArea1";
+            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
+            series2.Legend = "Legend1";
+            series2.Name = "S1";
+            this.chart1.Series.Add(series2);
+            this.chart1.Size = new System.Drawing.Size(288, 224);
+            this.chart1.TabIndex = 20;
+            this.chart1.Text = "chart1";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Ink Free", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(31, 382);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(106, 30);
+            this.label7.TabIndex = 19;
+            this.label7.Text = "Expense:";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Ink Free", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(31, 330);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(100, 30);
+            this.label6.TabIndex = 18;
+            this.label6.Text = "Income:";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Ink Free", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(31, 281);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(81, 30);
+            this.label5.TabIndex = 17;
+            this.label5.Text = "Total:";
+            // 
+            // expenseLabel
+            // 
+            this.expenseLabel.AutoSize = true;
+            this.expenseLabel.Font = new System.Drawing.Font("Ink Free", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.expenseLabel.Location = new System.Drawing.Point(143, 382);
+            this.expenseLabel.Name = "expenseLabel";
+            this.expenseLabel.Size = new System.Drawing.Size(28, 30);
+            this.expenseLabel.TabIndex = 16;
+            this.expenseLabel.Text = "0";
+            // 
+            // incomeLabel
+            // 
+            this.incomeLabel.AutoSize = true;
+            this.incomeLabel.Font = new System.Drawing.Font("Ink Free", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.incomeLabel.Location = new System.Drawing.Point(137, 330);
+            this.incomeLabel.Name = "incomeLabel";
+            this.incomeLabel.Size = new System.Drawing.Size(28, 30);
+            this.incomeLabel.TabIndex = 15;
+            this.incomeLabel.Text = "0";
+            // 
+            // dataGridView2
+            // 
+            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView2.Location = new System.Drawing.Point(9, 12);
+            this.dataGridView2.Name = "dataGridView2";
+            this.dataGridView2.RowTemplate.Height = 24;
+            this.dataGridView2.Size = new System.Drawing.Size(91, 55);
+            this.dataGridView2.TabIndex = 14;
+            // 
+            // button2
+            // 
+            this.button2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button2.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.button2.FlatAppearance.BorderSize = 3;
+            this.button2.FlatAppearance.MouseDownBackColor = System.Drawing.Color.SandyBrown;
+            this.button2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.BurlyWood;
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.Font = new System.Drawing.Font("Ink Free", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.ForeColor = System.Drawing.Color.DarkBlue;
+            this.button2.Location = new System.Drawing.Point(863, 99);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(106, 46);
+            this.button2.TabIndex = 13;
+            this.button2.Text = "Delete";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // label4
             // 
@@ -387,23 +494,23 @@
             // 
             this.dataGridView1.BackgroundColor = System.Drawing.Color.Moccasin;
             this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.Moccasin;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Ink Free", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.SandyBrown;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.Moccasin;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.Moccasin;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Ink Free", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.SandyBrown;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Moccasin;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.Moccasin;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Ink Free", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.SandyBrown;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.Moccasin;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Ink Free", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.SandyBrown;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle4;
             this.dataGridView1.Location = new System.Drawing.Point(320, 159);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(649, 247);
@@ -419,120 +526,33 @@
             this.comboBox1.TabIndex = 0;
             this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
-            // button2
+            // button3
             // 
-            this.button2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button2.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.button2.FlatAppearance.BorderSize = 3;
-            this.button2.FlatAppearance.MouseDownBackColor = System.Drawing.Color.SandyBrown;
-            this.button2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.BurlyWood;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Ink Free", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.ForeColor = System.Drawing.Color.DarkBlue;
-            this.button2.Location = new System.Drawing.Point(863, 99);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(106, 46);
-            this.button2.TabIndex = 13;
-            this.button2.Text = "Delete";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
-            // 
-            // dataGridView2
-            // 
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Location = new System.Drawing.Point(9, 12);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.RowTemplate.Height = 24;
-            this.dataGridView2.Size = new System.Drawing.Size(91, 55);
-            this.dataGridView2.TabIndex = 14;
-            // 
-            // incomeLabel
-            // 
-            this.incomeLabel.AutoSize = true;
-            this.incomeLabel.Font = new System.Drawing.Font("Ink Free", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.incomeLabel.Location = new System.Drawing.Point(137, 330);
-            this.incomeLabel.Name = "incomeLabel";
-            this.incomeLabel.Size = new System.Drawing.Size(28, 30);
-            this.incomeLabel.TabIndex = 15;
-            this.incomeLabel.Text = "0";
-            // 
-            // expenseLabel
-            // 
-            this.expenseLabel.AutoSize = true;
-            this.expenseLabel.Font = new System.Drawing.Font("Ink Free", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.expenseLabel.Location = new System.Drawing.Point(143, 382);
-            this.expenseLabel.Name = "expenseLabel";
-            this.expenseLabel.Size = new System.Drawing.Size(28, 30);
-            this.expenseLabel.TabIndex = 16;
-            this.expenseLabel.Text = "0";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Ink Free", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(31, 281);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(81, 30);
-            this.label5.TabIndex = 17;
-            this.label5.Text = "Total:";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Ink Free", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(31, 330);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(100, 30);
-            this.label6.TabIndex = 18;
-            this.label6.Text = "Income:";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Ink Free", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(31, 382);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(106, 30);
-            this.label7.TabIndex = 19;
-            this.label7.Text = "Expense:";
-            // 
-            // chart1
-            // 
-            this.chart1.BorderlineColor = System.Drawing.Color.Transparent;
-            chartArea3.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea3);
-            legend3.Name = "Legend1";
-            this.chart1.Legends.Add(legend3);
-            this.chart1.Location = new System.Drawing.Point(18, 44);
-            this.chart1.Name = "chart1";
-            series3.ChartArea = "ChartArea1";
-            series3.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
-            series3.Legend = "Legend1";
-            series3.Name = "S1";
-            this.chart1.Series.Add(series3);
-            this.chart1.Size = new System.Drawing.Size(288, 224);
-            this.chart1.TabIndex = 20;
-            this.chart1.Text = "chart1";
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Ink Free", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(118, 281);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(28, 30);
-            this.label8.TabIndex = 21;
-            this.label8.Text = "0";
+            this.button3.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button3.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.button3.FlatAppearance.BorderSize = 3;
+            this.button3.FlatAppearance.MouseDownBackColor = System.Drawing.Color.SandyBrown;
+            this.button3.FlatAppearance.MouseOverBackColor = System.Drawing.Color.BurlyWood;
+            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button3.Font = new System.Drawing.Font("Ink Free", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button3.ForeColor = System.Drawing.Color.DarkBlue;
+            this.button3.Location = new System.Drawing.Point(718, 99);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(123, 46);
+            this.button3.TabIndex = 22;
+            this.button3.Text = "Update";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // moneyBook
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(984, 450);
-            this.Controls.Add(this.HomePanel);
-            this.Controls.Add(this.inputMoneyPanel);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.addPanel);
+            this.Controls.Add(this.HomePanel);
+            this.Controls.Add(this.inputMoneyPanel);
             this.Name = "moneyBook";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MoneyBook";
@@ -544,9 +564,9 @@
             this.inputMoneyPanel.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -585,5 +605,6 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Button button3;
     }
 }

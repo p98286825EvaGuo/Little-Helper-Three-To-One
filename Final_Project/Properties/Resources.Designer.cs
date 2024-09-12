@@ -63,6 +63,106 @@ namespace Final_Project.Properties {
         /// <summary>
         ///   查詢類型 System.Drawing.Bitmap 的當地語系化資源。
         /// </summary>
+        internal static System.Drawing.Bitmap angle_left {
+            get {
+                object obj = ResourceManager.GetObject("angle-left", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查詢類型 System.Drawing.Bitmap 的當地語系化資源。
+        /// </summary>
+        internal static System.Drawing.Bitmap angle_left__2_ {
+            get {
+                object obj = ResourceManager.GetObject("angle-left (2)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查詢類型 System.Drawing.Bitmap 的當地語系化資源。
+        /// </summary>
+        internal static System.Drawing.Bitmap angle_right {
+            get {
+                object obj = ResourceManager.GetObject("angle-right", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查詢類型 System.Drawing.Bitmap 的當地語系化資源。
+        /// </summary>
+        internal static System.Drawing.Bitmap angle_right__2_ {
+            get {
+                object obj = ResourceManager.GetObject("angle-right (2)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查詢類型 System.Drawing.Bitmap 的當地語系化資源。
+        /// </summary>
+        internal static System.Drawing.Bitmap home {
+            get {
+                object obj = ResourceManager.GetObject("home", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查詢類型 System.Drawing.Bitmap 的當地語系化資源。
+        /// </summary>
+        internal static System.Drawing.Bitmap home__1_ {
+            get {
+                object obj = ResourceManager.GetObject("home (1)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查詢類型 System.Drawing.Bitmap 的當地語系化資源。
+        /// </summary>
+        internal static System.Drawing.Bitmap home__2_ {
+            get {
+                object obj = ResourceManager.GetObject("home (2)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查詢類型 System.Drawing.Bitmap 的當地語系化資源。
+        /// </summary>
+        internal static System.Drawing.Bitmap IMG_0448 {
+            get {
+                object obj = ResourceManager.GetObject("IMG_0448", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查詢類型 System.Drawing.Bitmap 的當地語系化資源。
+        /// </summary>
+        internal static System.Drawing.Bitmap IMG_0451 {
+            get {
+                object obj = ResourceManager.GetObject("IMG_0451", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查詢類型 System.Drawing.Bitmap 的當地語系化資源。
+        /// </summary>
+        internal static System.Drawing.Bitmap IMG_0452 {
+            get {
+                object obj = ResourceManager.GetObject("IMG_0452", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查詢類型 System.Drawing.Bitmap 的當地語系化資源。
+        /// </summary>
         internal static System.Drawing.Bitmap Loading_Page {
             get {
                 object obj = ResourceManager.GetObject("Loading Page", resourceCulture);

@@ -95,7 +95,7 @@ namespace Final_Project
         private void CheckBtn_Click(object sender, EventArgs e)
         {
             panel1.Visible = true;
-            addPanel.Visible = false;
+            HomePanel.Visible = false;
             string monthLabel;
             switch (month)
             {
@@ -113,7 +113,7 @@ namespace Final_Project
                 default: monthLabel = "DEC"; break;
             }
             label4.Text = monthLabel + " " + year.ToString();
-            //this.moneyTableAdapter.Fill(this.moneyDBDataSet.Money);
+            //loadDB();
         }
 
         private void moneyBook_Load(object sender, EventArgs e)
@@ -281,8 +281,6 @@ namespace Final_Project
             {
                 string Id;
                 Id = dataGridView1.CurrentRow.Cells[0].Value.ToString();
-                //Edit("DELETE FROM 員工 WHERE 員工編號='" + empId.Replace("'", "''") + "'");
-                //cboDep_SelectedIndexChanged(sender, e);
                 SqlConnection cn = new SqlConnection();
                 cn.ConnectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;" +
                     "AttachDbFilename=|DataDirectory|MoneyDB.mdf;" +
@@ -354,6 +352,36 @@ namespace Final_Project
             chart1.Series["S1"].Points.Clear();
             chart1.Series["S1"].Points.AddXY("Income", Convert.ToInt32(incomeLabel.Text));
             chart1.Series["S1"].Points.AddXY("Expense", Convert.ToInt32(expenseLabel.Text));
+        }
+
+        private void button3_Click(object sender, EventArgs e) //update
+        {
+            try
+            {
+                string Id;
+                Id = dataGridView1.CurrentRow.Cells[0].Value.ToString();
+                string classU = dataGridView1.CurrentRow.Cells[1].Value.ToString();
+                string yearU = dataGridView1.CurrentRow.Cells[2].Value.ToString();
+                string monthU = dataGridView1.CurrentRow.Cells[3].Value.ToString();
+                string dateU = dataGridView1.CurrentRow.Cells[4].Value.ToString();
+                string amountU = dataGridView1.CurrentRow.Cells[5].Value.ToString();
+                string noteU = dataGridView1.CurrentRow.Cells[6].Value.ToString();
+                SqlConnection cn = new SqlConnection();
+                cn.ConnectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;" +
+                    "AttachDbFilename=|DataDirectory|MoneyDB.mdf;" +
+                    "Integrated Security=True";
+                cn.Open();
+                SqlCommand cmd = new SqlCommand("UPDATE Money SET Year=" + yearU + ", Month=" +
+                    monthU + ", Date=" + dateU + ", Amount=" + amountU + ", Note='" + noteU + "', Class='" + classU + "' WHERE Id=" + Id, cn); ;
+                cmd.ExecuteNonQuery();
+                cn.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
+            comboBox1_SelectedIndexChanged(sender, e);
         }
     }
 }

@@ -12,6 +12,7 @@
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
     <PublishUrl>publish\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
@@ -24,7 +25,6 @@
     <MapFileExtensions>true</MapFileExtensions>
     <ApplicationRevision>0</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
-    <IsWebBootstrapper>false</IsWebBootstrapper>
     <UseApplicationTrust>false</UseApplicationTrust>
     <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
@@ -68,6 +68,26 @@
     <Compile Include="Calendar.Designer.cs">
       <DependentUpon>Calendar.cs</DependentUpon>
     </Compile>
+    <Compile Include="DiaryDBDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DiaryDBDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DiaryDBDataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DiaryDBDataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DiaryDBDataSet2.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DiaryDBDataSet2.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DiaryDBDataSet3.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DiaryDBDataSet3.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -109,6 +129,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>MoneyDBDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="MoneyDBDataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MoneyDBDataSet1.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Calendar.resx">
@@ -142,6 +167,50 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <None Include="DiaryDBDataSet.xsc">
+      <DependentUpon>DiaryDBDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="DiaryDBDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DiaryDBDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DiaryDBDataSet.xss">
+      <DependentUpon>DiaryDBDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="DiaryDBDataSet1.xsc">
+      <DependentUpon>DiaryDBDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="DiaryDBDataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DiaryDBDataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DiaryDBDataSet1.xss">
+      <DependentUpon>DiaryDBDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="DiaryDBDataSet2.xsc">
+      <DependentUpon>DiaryDBDataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="DiaryDBDataSet2.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DiaryDBDataSet2.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DiaryDBDataSet2.xss">
+      <DependentUpon>DiaryDBDataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="DiaryDBDataSet3.xsc">
+      <DependentUpon>DiaryDBDataSet3.xsd</DependentUpon>
+    </None>
+    <None Include="DiaryDBDataSet3.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DiaryDBDataSet3.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DiaryDBDataSet3.xss">
+      <DependentUpon>DiaryDBDataSet3.xsd</DependentUpon>
+    </None>
     <None Include="MoneyDBDataSet.xsc">
       <DependentUpon>MoneyDBDataSet.xsd</DependentUpon>
     </None>
@@ -152,6 +221,17 @@
     </None>
     <None Include="MoneyDBDataSet.xss">
       <DependentUpon>MoneyDBDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="MoneyDBDataSet1.xsc">
+      <DependentUpon>MoneyDBDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="MoneyDBDataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>MoneyDBDataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="MoneyDBDataSet1.xss">
+      <DependentUpon>MoneyDBDataSet1.xsd</DependentUpon>
     </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -173,6 +253,13 @@
     <None Include="Resources\pig.png" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="DiaryDB.mdf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="DiaryDB_log.ldf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <DependentUpon>DiaryDB.mdf</DependentUpon>
+    </Content>
     <Content Include="MoneyDB.mdf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -180,6 +267,16 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <DependentUpon>MoneyDB.mdf</DependentUpon>
     </Content>
+    <None Include="Resources\angle-right.png" />
+    <None Include="Resources\angle-left.png" />
+    <None Include="Resources\angle-right %282%29.png" />
+    <None Include="Resources\angle-left %282%29.png" />
+    <None Include="Resources\home %282%29.png" />
+    <None Include="Resources\home %281%29.png" />
+    <None Include="Resources\home.png" />
+    <None Include="Resources\IMG_0448.jpg" />
+    <None Include="Resources\IMG_0452.jpg" />
+    <None Include="Resources\IMG_0451.jpg" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.6.1">
